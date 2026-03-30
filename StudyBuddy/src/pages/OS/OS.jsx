@@ -50,7 +50,7 @@ function OS() {
     { q: "What is the mechanism of stack overflow by the deep recursion?", a: "Recursion functions because if the recursive function goes very deep then it causes stack overflow because it keeps stacking the same function until it stops/ no place to keep stacking."}
   ];
 
-  const defs340 = [
+  const OS_defs = [
     {q: "OS", a: "Program that manages hardware and provides other programs with an environment to run it/execute it."},
     {q: "Examples of different operating systems.", a:"Linux, Windows, macOS, iOS, Android, Unix, Windows Server."},
     {q: "What different types of computers exist? How different are OS for different computer types.", a: "- PC: General purpose computing, supports multiple users and multitasking, requires significant hardware resources. \n- Mobile: Touch screen optimized, power efficient/maximize battery life, closed ecosystems, so less user modification. \n- Server: Used to provide services to other computers, designed for high-performance and network management, supports multiple users and remote access. \n- Embedded: Used in specialized hardware, highly optimized for specific tasks and real-time processing."},
@@ -100,6 +100,85 @@ function OS() {
   }
   ];
 
+  const process_defs = [
+  {
+    q: "What is process?",
+    a: "Process is a program in execution. Something that links in our computer, requires resources, asks the OS for services/help, can also ask for exclusive control of the I/O device, reads files, can also be called tasks."
+  },
+  {
+    q: "What is the difference between process and program?",
+    a: "A program is a list of directions for the computer to execute, and it is used to manipulate data and process is when this list of directions is in execution."
+  },
+  {
+    q: "List five process states (use the naming from our textbook and class please)",
+    a: "New: process created, not ready to use the CPU. \nReady: in the ready-queue, ready to use the CPU. \nRunning: CPU executing the process. \nWaiting: waiting for possibly an IO device, not ready to continue executing.\nTerminated State: process has finished."
+  },
+  {
+    q: "What is ready queue? How many ready queues do you expect in the system?",
+    a: "a collection of processes that are loaded into memory waiting and ready to use CPU. Typically, there is one ready queue per CPU in a system. "
+  },
+  {
+    q: "What is I/O queue? How many I/O queues do you expect in the system?",
+    a: "An I/O queue is a collection of processes that are waiting to use an I/O device. You can expect one I/O queue for every I/O device."
+  },
+  {
+    q: "What happens to a process when it requests I/O operation (like file reading) in the classic “blocking” scenario?",
+    a: "Means the process immediately yields CPU to someone else. In a classic \"blocking\" scenario, the process requesting the I/O operation is paused and moved to a waiting state until the operation is completed, allowing the CPU to handle other tasks in the meantime."
+  },
+  {
+    q: "Where does the process go once the I/O request is complete?",
+    a: "The process returns to the ready queue again until it is completely executed."
+  },
+  {
+    q: "Understand what happens to processes in reality when process states change (don’t be fooled by process “movements” in typical visualizations).",
+    a: "When process states change, the operating system updates internal data structures to reflect the new state, like marking a process as \"Running\" or \"Waiting.\" These changes involve managing scheduling and resource allocation rather than any physical movement of the process. Visualizations simplify this for clarity but don’t represent what happens in reality. "
+  },
+  {
+    q: "Process Control Block (PCB). What typical components can you see there?",
+    a: "PCB(process control block): record that OS keeps for every process in the compute. It contains: \nPID(process identification number) is like a numeric name, each process has one. \nPC(program counter): a register in the CPU that tells you where in the program code stopped at.\nRegister file: device in the CPU that has all the general purposes registers. \nCPU scheduling info: when OS wants to know how much time the process has taken, it asks this dude.\nRAM management Info: we store the size of the process, the stack pointer of the process, operation file. \nList of opened files: whatever the process opens will be here, a list of update logs.\nParent process ID: to know who the parent of this process is. "
+  },
+  {
+    q: "Context switch. Why context switching has a small performance overhead associated with it? How does that performance overhead affect system calls?",
+    a: "because doing operations like writing and reading from RAM is super slow, that's why it takes time. No matter how well it is supported by the hardware, the context switch is not free. We cannot ignore the extra time that it takes. If we don’t do it often enough, then it is not very responsive for the user. This performance affects system calls because any system call requires switching from the process to the operating system and back to the process, which requires 2 context switches. One is when the CPU has to switch from process to OS and the other one is backward OS -> process. "
+  },
+  {
+    q: "What is POSIX?",
+    a: "Portable Operating System Interface, is a set of standards that define how Unix-like operating systems should behave to maintain compatibility between operating systems."
+  },
+  {
+    q: "fork()",
+    a: "1. do a copy with a different PID. \n2. the parent continues execution after being forked. \n3. The child process will also run and it will start executing after the fork() function/operation.\n4. fork() return: parent process receives positive values and child processes receive zeros."
+  },
+  {
+    q: "exec(fileName)",
+    a: "erase the original process content and fill the process with the new instructions and data from fileName"
+  },
+  {
+    q: "exit()",
+    a: "put the process in a terminated state.. "
+  },
+  {
+    q: "wait()",
+    a: "used by the parent process and it pauses the calling process until the child terminates."
+  },
+  {
+    q: "Why the existence of orphan processes is undesirable (what is the harm of orphan processes)?",
+    a: "Basically an Orphan process is when a parent calls exit() without using wait() first. When this happens, our child process has no parent to return its exit status to. This can cause resource leakage, which can be harmful. "
+  },
+  {
+    q: "Zombie process",
+    a: "Process in the terminated state. Process that calls exit() whose parent has not called wait() yet or has not collected the waiting status yet. The existence of zombie processes is fine but orphan processes are not fine. But the process control log is still there and it takes up RAM memory, it’s fine but not too long. Active processes take resources."
+  },
+  {
+    q: "What are the properties of heap (it is fragmented, full of holes)? How does it affect the typical dynamic memory allocation like using the operator new?",
+    a: "takes longer time to allocate."
+  },
+  {
+    q: "What are the properties of stack?",
+    a: "contiguous, quick to allocate and it has a limit to how much memory it can allocate, called a stack overflow."
+  }
+];
+
 
   const renderContent = () => {
     switch (activeTab) {
@@ -132,7 +211,7 @@ function OS() {
             </div>
             
             <div className="definitions-grid">
-              {defs340.map((item, index) => (
+              {OS_defs.map((item, index) => (
                 <div className="subject-box active-stat" key={index}>
                   <div className="box-top">
                     <span className="box-label">{item.q}</span>
@@ -141,6 +220,32 @@ function OS() {
                 </div>
               ))}
             </div>
+
+
+
+
+            <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">Process</span>
+              <span className="divider-line"></span>
+            </div>
+            
+            <div className="definitions-grid">
+              {process_defs.map((item, index) => (
+                <div className="subject-box active-stat" key={index}>
+                  <div className="box-top">
+                    <span className="box-label">{item.q}</span>
+                  </div>
+                  <p className="box-desc">{item.a}</p>
+                </div>
+              ))}
+            </div>
+
+
+
+
+
+
           </div>
         );
       case 'notes':
