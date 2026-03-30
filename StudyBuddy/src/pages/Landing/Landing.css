@@ -1,0 +1,119 @@
+/* Color Palette */
+:root {
+  --primary-blue: #4a90e2;
+  --dark-navy: #2c3e50;
+  --soft-gray: #666;
+  --bg-white: #ffffff;
+  --bg-off-white: #f9fbfd;
+}
+
+.landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header & Logo Styling */
+.hero-header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.logo-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  font-size: 3rem;
+}
+
+.buddy-text {
+  color: var(--primary-blue);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--soft-gray);
+}
+
+/* Main Content & CTA Card */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-section {
+  text-align: center;
+  background-color: var(--bg-white);
+  padding: 3.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 650px;
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  color: var(--dark-navy);
+  margin-bottom: 1.2rem;
+}
+
+.cta-section p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Button Styling */
+.cta-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  border: none;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+}
+
+/* Footer */
+.simple-footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #aaa;
+}

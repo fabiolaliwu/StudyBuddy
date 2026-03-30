@@ -1,0 +1,136 @@
+:root {
+  --sidebar-bg: #1a1c23;
+  --main-bg: #f4f7fe;
+  --accent-blue: #4a90e2;
+  --text-white: #ffffff;
+  --text-muted: #8e94a0;
+}
+
+.os-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+.os-sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.os-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.os-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+
+.nav-item:hover, .nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-white);
+}
+
+.nav-item.active {
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* Main Content Area */
+.os-main {
+  flex-grow: 1;
+  background-color: var(--main-bg);
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.os-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  width: 300px;
+}
+
+/* Dashboard Cards */
+.os-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.status-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.big-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  margin: 10px 0 0 0;
+}
+
+.os-content-placeholder {
+  background: white;
+  height: 400px;
+  border-radius: 12px;
+  border: 2px dashed #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.os-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
