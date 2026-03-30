@@ -75,17 +75,14 @@ function OS() {
       case 'notes':
         return (
           <div className="tab-pane">
-            <div className="subject-box active-stat">
-              
-            </div>
+            <p className="ai-placeholder-text">Notes coming soon!</p>
           </div>
         );
       case 'ai':
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
-              <p className="box-desc">Ask about the difference between a Compiler and an Interpreter...</p>
-              <input type="text" className="ai-input" placeholder="Type your question..." />
+                <p className="ai-placeholder-text">AI Helper coming soon!</p>
             </div>
           </div>
         );

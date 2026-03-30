@@ -39,7 +39,6 @@
   position: relative; 
   width: 100%;
   max-width: 480px;
-  /* CHANGED: Added margin-bottom to create a gap between the logo and the first box */
   margin-bottom: 40px; 
   z-index: 1;
   display: flex;
@@ -71,7 +70,6 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  /* ✅ CHANGE: Ensure it fills mobile width but stays small on PC */
   width: 100%;       
   max-width: 480px;  
 }
