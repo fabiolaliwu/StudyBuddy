@@ -4,3 +4,10 @@ The design of this website is done with AI. Work smarter and not harder. The mos
 
 You can clone the repository.
 
+```
+cd StudyBuddy
+npm install
+npm install react-router-dom
+npm run dev
+```
+
