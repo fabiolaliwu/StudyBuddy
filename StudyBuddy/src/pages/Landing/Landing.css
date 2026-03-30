@@ -15,6 +15,7 @@
   background: #fafaf9;
   position: relative;
   font-family: 'Instrument Sans', sans-serif;
+  padding: 40px 20px; /* Added padding so content doesn't hit screen edges on mobile */
 }
 
 /* Subtle grid background */
@@ -64,7 +65,8 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 480px;
+  width: 100%;       /* Changed from fixed width */
+  max-width: 480px;  /* Added max-width to keep desktop size consistent */
 }
 
 .subject-box {
@@ -167,8 +169,29 @@
   margin-top: 4px;
 }
 
+/* --- Responsive Adjustments --- */
 @media (max-width: 600px) {
-  .landing-boxes { width: 90vw; }
-  .landing-logo { top: 32px; left: 28px; }
-  .main-title { font-size: 38px; }
+  .plain-landing {
+    padding-top: 140px; /* Make space so logo doesn't overlap the first box */
+    align-items: flex-start; /* Start content from top rather than centering vertically */
+    justify-content: flex-start;
+  }
+
+  .landing-logo {
+    top: 32px;
+    left: 24px;
+  }
+
+  .main-title {
+    font-size: 42px; /* Slightly smaller for mobile width */
+  }
+
+  .landing-boxes {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .subject-box {
+    padding: 20px 22px; /* Slightly tighter padding for mobile screens */
+  }
 }
