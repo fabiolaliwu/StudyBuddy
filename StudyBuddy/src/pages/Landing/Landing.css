@@ -15,7 +15,7 @@
   background: #fafaf9;
   position: relative;
   font-family: 'Instrument Sans', sans-serif;
-  padding: 40px 20px; /* Added padding so content doesn't hit screen edges on mobile */
+  padding: 40px 20px;
 }
 
 /* Subtle grid background */
@@ -65,8 +65,10 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 100%;       /* Changed from fixed width */
-  max-width: 480px;  /* Added max-width to keep desktop size consistent */
+  width: 100%;
+  max-width: 480px;
+  /* ✅ ADDED THIS: Pushes the boxes down so they don't overlap the logo area on desktop */
+  margin-top: 80px; 
 }
 
 .subject-box {
@@ -82,6 +84,8 @@
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
+/* ... keep the rest of your subject-box styles exactly as they are ... */
+
 .subject-box:not(.inactive):hover {
   border-color: #222;
   transform: translateY(-2px);
@@ -94,7 +98,6 @@
   border-color: #f0f0f0;
 }
 
-/* Top row: label + icon */
 .box-top {
   display: flex;
   align-items: flex-start;
@@ -143,7 +146,6 @@
   color: #ccc;
 }
 
-/* Arrow icon */
 .subject-box svg {
   opacity: 0.3;
   transition: opacity 0.2s, transform 0.2s;
@@ -156,7 +158,6 @@
   transform: translateX(4px);
 }
 
-/* Soon badge */
 .box-soon {
   font-size: 10px;
   font-weight: 600;
@@ -172,9 +173,16 @@
 /* --- Responsive Adjustments --- */
 @media (max-width: 600px) {
   .plain-landing {
-    padding-top: 140px; /* Make space so logo doesn't overlap the first box */
-    align-items: flex-start; /* Start content from top rather than centering vertically */
+    padding-top: 140px; 
+    align-items: flex-start;
     justify-content: flex-start;
+  }
+  
+  /* Reset the desktop margin-top on mobile since padding-top handles it here */
+  .landing-boxes {
+    margin-top: 0; 
+    width: 100%;
+    gap: 12px;
   }
 
   .landing-logo {
@@ -183,15 +191,10 @@
   }
 
   .main-title {
-    font-size: 42px; /* Slightly smaller for mobile width */
-  }
-
-  .landing-boxes {
-    width: 100%;
-    gap: 12px;
+    font-size: 42px;
   }
 
   .subject-box {
-    padding: 20px 22px; /* Slightly tighter padding for mobile screens */
+    padding: 20px 22px;
   }
 }

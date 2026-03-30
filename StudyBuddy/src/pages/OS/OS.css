@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-/* --- Page Layout (same as your original) --- */
 .plain-landing {
   min-height: 100vh;
   width: 100%;
@@ -20,7 +19,6 @@
   padding: 80px 52px;
 }
 
-/* Background grid */
 .plain-landing::before {
   content: '';
   position: absolute;
@@ -33,19 +31,22 @@
   pointer-events: none;
 }
 
-/* --- Header --- */
+/* --- ✅ FIXED HEADER (Tabs and Logo on one line) --- */
 .os-header {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: row;      /* Desktop: Side by side */
+  justify-content: space-between; 
+  align-items: flex-end;    /* Baseline alignment */
   margin-bottom: 60px;
-  z-index: 1;
+  z-index: 10;
   position: relative;
 }
 
-.landing-logo {
+/* IMPORTANT: This overrides the absolute positioning from your Landing.css */
+.os-header .landing-logo {
+  position: static !important; 
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -64,6 +65,7 @@
   text-decoration: none;
   font-size: 12px;
   color: #c0c0c0;
+  margin-bottom: 4px;
 }
 
 /* --- Tabs --- */
@@ -73,6 +75,7 @@
   padding: 4px;
   border-radius: 8px;
   gap: 2px;
+  margin-bottom: 8px; /* Alignment tweak */
 }
 
 .tab-segment {
@@ -83,15 +86,25 @@
   color: #888;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.tab-segment:hover {
-  color: #111;
+  white-space: nowrap;
 }
 
 .tab-segment.active {
   background: #e2e2df;
   color: #111;
+}
+
+/* --- ✅ DYNAMIC GRID (3 columns on PC, 1 on Mobile) --- */
+.tab-pane {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.definitions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 16px;
+  width: 100%;
 }
 
 /* --- Divider --- */
@@ -119,88 +132,47 @@
   background: #ebebeb;
 }
 
-/* --- ✅ DEFINITIONS GRID (THE IMPORTANT PART) --- */
-.definitions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  width: 100%;
-  max-width: 1000px;
-  z-index: 1;
-}
-
-/* --- Cards --- */
 .subject-box {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 24px 28px;
   background: #fff;
   border: 1px solid #ebebeb;
   border-radius: 6px;
-  color: #111;
-  transition: 0.2s ease;
+  padding: 24px;
   height: 100%;
-}
-
-.subject-box:hover {
-  transform: translateY(-2px);
-  border-color: #ddd;
-}
-
-.box-top {
-  display: flex;
-  justify-content: space-between;
 }
 
 .box-label {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: 18px;
-  font-weight: 400;
   color: #111;
-  line-height: 1.3;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .box-desc {
   font-size: 13.5px;
   line-height: 1.6;
   color: #777;
+  white-space: pre-wrap;
 }
 
-/* --- AI Input --- */
-.ai-input {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid #ebebeb;
-  border-radius: 8px;
-  font-family: 'Instrument Sans', sans-serif;
-  margin-top: 12px;
-  outline: none;
-}
-
-.ai-input:focus {
-  border-color: #111;
-}
-
-/* --- Mobile --- */
-@media (max-width: 850px) {
+/* --- Mobile Responsive --- */
+@media (max-width: 950px) {
   .os-header {
-    flex-direction: row; /* ✅ keep them side by side */
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    flex-direction: column; /* Stack header items on small screens */
+    align-items: flex-start;
+    gap: 24px;
   }
 
-  .main-title {
-    font-size: 28px; /* shrink so it fits */
+  .definitions-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
   }
 
   .os-tabs-segmented {
-    flex-shrink: 0;
+    width: 100%;
   }
 
   .tab-segment {
-    padding: 6px 10px;
-    font-size: 12px;
+    flex: 1;
+    text-align: center;
   }
 }
