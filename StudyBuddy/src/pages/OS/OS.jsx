@@ -46,8 +46,60 @@ function OS() {
     { q: "What do we mean by “stack is fast, heap is slow”?", a: "Memory allocation is faster in stack because it is continuous; heaps are fragmented. Reading/writing time is similar." },
     { q: "What is a static array vs dynamic array?", a: "Static: size fixed at compilation. Dynamic: size determined at run time." },
     { q: "What unit fits best for stack size limit (kB, MB, GB)?", a: "Usually measured in MB (e.g., 8 MB to 32 MB)." },
-    { q: "What is stack overflow? How does it happen?", a: "Program crashes when stack exceeds size. Common ways: large static arrays and deep recursion." }
+    { q: "What is stack overflow? How does it happen?", a: "Program crashes when stack exceeds size imposed by the OS. Common ways: large static arrays and deep recursion." },
+    { q: "What is the mechanism of stack overflow by the deep recursion?", a: "Recursion functions because if the recursive function goes very deep then it causes stack overflow because it keeps stacking the same function until it stops/ no place to keep stacking."}
   ];
+
+  const defs340 = [
+    {q: "OS", a: "Program that manages hardware and provides other programs with an environment to run it/execute it."},
+    {q: "Examples of different operating systems.", a:"Linux, Windows, macOS, iOS, Android, Unix, Windows Server."},
+    {q: "What different types of computers exist? How different are OS for different computer types.", a: "- PC: General purpose computing, supports multiple users and multitasking, requires significant hardware resources. \n- Mobile: Touch screen optimized, power efficient/maximize battery life, closed ecosystems, so less user modification. \n- Server: Used to provide services to other computers, designed for high-performance and network management, supports multiple users and remote access. \n- Embedded: Used in specialized hardware, highly optimized for specific tasks and real-time processing."},
+    {
+    q: "What is operating system kernel (central part of OS).",
+    a: "The central component of the Operating system that performs the most important OS tasks. OS Kernel does not compete with the CPU, it just sits there when someone needs its attention."
+  },
+  {
+    q: "List of operating systems functions. For each item on this list, be ready to give a short description.",
+    a: "Executing programs: OS has control loading the program from RAM, schedule them for execution until it is complted\nCPU management: The OS controls the time of the program. \nRAM management: Keeps track of memory usage, allocates and deallocates memory to processes, and prevents conflicts or memory leaks.\nI/O management: The OS handles I/O operations, buffering, and device drivers to ensure smooth data transfer.\nStorage management: OS deals with the management of the storage devices, programs do not do it. \nNetwork management: send and receive data from a network. \nSecurity: It is not only about making people not able to hack it. Controlling access rights from users. It makes sure that you do not alternate computer settings and controls the logins and passwords. When connecting a camera to a computer, it has to go through the OS to get permission. OS might have no problem with it but also might prompt and ask the user to give application permission. \nUser Interface: OS provides you with all kinds of tools, you interact with the computer to manage the computer. \nProcess communication: (IPC) is when we have multiple applications running on our computer, they “talk to each other” like sending files through the OS."
+  },
+  {
+    q: "What is multitasking? How is it arranged?",
+    a: "Technique that allows the operating system/computer to do FAKE simultaneous execution of multiple processes on one execution unit. Switching between multiple processes very fast. Multitasking does not mean running multiple things in one or doing multiple stuff in parallel, but it means to be switching from one program to another one in one execution :) This is arranged by the CPU scheduler in the OS."
+  },
+  {
+    q: "What are user and kernel modes? What are user and kernel level programs/processes.",
+    a: "User Mode(Safe instructions, User mode instructions): \nthink about arithmetic functions.\nAre available for all programs. \nBranching instructions: programs cannot mess up other programs if im using the incorrect branch.\nPrograms running in user mode are done only in user level. \nThis mode is way faster\n\nKernel Mode(Unsafe instructions): \nDoes not mean that it has security issues. \nIf CPU instructions are used incorrectly by a program, it might cause problems not only to itself but to other programs also. \nThey are there for all the most trusted programmers. \nArithmetic instructions. \nAlso called supervisor mode. \nUsing kernel mode instruction, your computer might not have kernel mode, but this means that you are using syscall, and operating system. \nThis mode involves the operating system which means that it is easier to program but it slightly takes more time to do so. \nTo use kernel mode, it has to ask the operating system in order to do so, so it takes more time. \n\nIt will not run kernel-mode instruction, but it will alert the operating system to stop the program if user mode is introduced. CPU will not execute the instruction. When the operating system uses the CPU, it says “KERNEL MODE” instead of “USER MODE”. This should happen only when a trusted user is using it. kernel mode still has access to user mode. CPU switches to kernel mode automatically when it is dealing with the operating system. For example, when doing syscall is automatically activates kernel mode. Once the OS is done with whatever it is doing, it will switch the CPU from kernel mode to user mode manually. When the CPU switches to kernel mode, you lose control over it, but when it switches back, you still have control over it. It is easy to switch form one mode to another mode."
+  },
+  {
+    q: "What is virtual memory?",
+    a: "a technique to use hard disk space as a fake extension of RAM and it is managed by the operating system. As long as your computer has memory then it only uses RAM, but if there is no memory then it uses this technique."
+  },
+  {
+    q: "What are interrupts? What are interrupt handlers? What issues interrupts? What is the sequence of things that happen when the interrupt arrives?",
+    a: "Interrupts: It is a signal about an important event that requires immediate attention. If you press a key on the keyboard, then it creates an interruption. What happens when it appears?\ngenerated by something, maybe by an input and output device.\ninterrupts travels to the CPU, and the CPU responds to the interrupt. The CPU pauses all currently running programs because the CPU has a more important thing to do. Every interrupt has a function on it, this function does what it does to respond to it. \nYour CPU switches to run this interrupt handler(ISR = interrupt service routine??)\nResume to the current process: when the interrupt is managed. \nInterrupt handler: response to signals event when it needs immediate attention. After that, the CPU goes back to its regular activity."
+  },
+  {
+    q: "What are drivers?",
+    a: "Small program that acts like an interpreter between OS and device, it helps OS to control the device. OS creators do not care about other creators out there. Hardware has small driver programs and these programs work with OS to tell them what to do because OS has different kinds of creators."
+  },
+  {
+    q: "What is file? What is file system? What is logical disk?",
+    a: "A file is a collection of data which is given a name. Hard disks only see a huge array of 0’s and 1’s.\nFiles system: a collection of data describing files on a hard disk including file physical locations. \nLogical disks: area of a physical hard disk that is described in a file system. It is not the physical disk itself, but a portion of it that the operating system treats as a separate, labeled unit (like Drive C: or D:)."
+  },
+  {
+    q: "What are networking protocols?",
+    a: "Set of rules on how to interpret data. The idea of network protocols is similar to the hard disk discussion, the networking adapter has no idea what it sends and receives because they are all strings of 0s and 1s."
+  },
+  {
+    q: "What is operating systems API?",
+    a: "Bunch of tools that OS provides to the programmer, tons of functions that you can use in your c and cpp program. The convenient cpp function that you use is the operating system API. Under the hood, this function uses syscall. Many API functions do not have syscall because they do not need it. Window API, cpp program will lock the program for Windows and different versions of Windows."
+  },
+  {
+    q: "What is context switch?",
+    a: "Is a sequence of steps that the CPU needs to execute to switch from one process to another process. It takes time, it is not free."
+  }
+  ];
+
 
   const renderContent = () => {
     switch (activeTab) {
@@ -62,6 +114,25 @@ function OS() {
             
             <div className="definitions-grid">
               {defs260.map((item, index) => (
+                <div className="subject-box active-stat" key={index}>
+                  <div className="box-top">
+                    <span className="box-label">{item.q}</span>
+                  </div>
+                  <p className="box-desc">{item.a}</p>
+                </div>
+              ))}
+            </div>
+
+
+
+            <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">OS</span>
+              <span className="divider-line"></span>
+            </div>
+            
+            <div className="definitions-grid">
+              {defs340.map((item, index) => (
                 <div className="subject-box active-stat" key={index}>
                   <div className="box-top">
                     <span className="box-label">{item.q}</span>
