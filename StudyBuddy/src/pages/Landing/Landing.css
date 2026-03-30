@@ -1,119 +1,174 @@
-/* Color Palette */
-:root {
-  --primary-blue: #4a90e2;
-  --dark-navy: #2c3e50;
-  --soft-gray: #666;
-  --bg-white: #ffffff;
-  --bg-off-white: #f9fbfd;
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.landing-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+.plain-landing {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafaf9;
+  position: relative;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+/* Subtle grid background */
+.plain-landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Logo — top left */
+.landing-logo {
+  position: absolute;
+  top: 44px;
+  left: 52px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, sans-serif;
+  gap: 4px;
 }
 
-/* Header & Logo Styling */
-.hero-header {
-  text-align: center;
-  padding: 4rem 0 2rem;
+.main-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -2px;
+  line-height: 1;
 }
 
-.logo-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--dark-navy);
-  margin-bottom: 0.5rem;
+.landing-sub {
+  font-size: 12px;
+  color: #c0c0c0;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+}
+
+/* Subject boxes */
+.landing-boxes {
+  position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 14px;
+  width: 480px;
 }
 
-.logo-icon {
-  font-size: 3rem;
-}
-
-.buddy-text {
-  color: var(--primary-blue);
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--soft-gray);
-}
-
-/* Main Content & CTA Card */
-.main-content {
-  flex-grow: 1;
+.subject-box {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 28px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.cta-section {
-  text-align: center;
-  background-color: var(--bg-white);
-  padding: 3.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  max-width: 650px;
-}
-
-.cta-section h2 {
-  font-size: 2.2rem;
-  color: var(--dark-navy);
-  margin-bottom: 1.2rem;
-}
-
-.cta-section p {
-  color: #555;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-}
-
-/* Button Styling */
-.cta-buttons {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-}
-
-button {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-  border: none;
-}
-
-button:hover {
+.subject-box:not(.inactive):hover {
+  border-color: #222;
   transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
 }
 
-.primary-btn {
-  background-color: var(--primary-blue);
-  color: white;
+.subject-box.inactive {
+  cursor: default;
+  background: #fcfcfc;
+  border-color: #f0f0f0;
 }
 
-.secondary-btn {
-  background-color: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
+/* Top row: label + icon */
+.box-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-/* Footer */
-.simple-footer {
-  text-align: center;
-  padding: 2.5rem 0;
-  border-top: 1px solid #eee;
-  font-size: 0.9rem;
-  color: #aaa;
+.box-top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.box-code {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+.inactive .box-code {
+  color: #d0d0d0;
+}
+
+.box-label {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.inactive .box-label {
+  color: #ccc;
+}
+
+.box-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #888;
+  font-weight: 400;
+}
+
+.inactive .box-desc {
+  color: #ccc;
+}
+
+/* Arrow icon */
+.subject-box svg {
+  opacity: 0.3;
+  transition: opacity 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.subject-box:not(.inactive):hover svg {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Soon badge */
+.box-soon {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ccc;
+  border: 1px solid #e8e8e8;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .landing-boxes { width: 90vw; }
+  .landing-logo { top: 32px; left: 28px; }
+  .main-title { font-size: 38px; }
 }

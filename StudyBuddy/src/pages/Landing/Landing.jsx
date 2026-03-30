@@ -1,37 +1,75 @@
 import React from 'react';
-import './Landing.css'; 
+import { Link } from 'react-router-dom';
+import './Landing.css';
+
+const subjects = [
+  {
+    id: 'os',
+    label: 'Operating Systems',
+    code: 'CS 340',
+    desc: 'Processes, memory management, file systems, and concurrency. The internals of how your computer actually works.',
+    link: '/os',
+    active: true,
+  },
+  {
+    id: '135',
+    label: 'CS 135',
+    code: 'CS 135',
+    desc: 'Foundations of computer science. Problem solving, algorithms, and the building blocks of programming.',
+    link: null,
+    active: false,
+  },
+  {
+    id: 'db',
+    label: 'Database Design',
+    code: 'CS 480',
+    desc: 'Relational models, SQL, normalization, and the art of structuring data that actually scales.',
+    link: null,
+    active: false,
+  },
+];
 
 function Landing() {
   return (
-    <div className="landing-container">
-      {/* Header with Logo */}
-      <header className="hero-header">
-        <h1 className="logo-title">
-          <span className="logo-icon">🎓</span> 
-          Study<span className="buddy-text">Buddy</span>
-        </h1>
-        <p className="subtitle">Your AI-Powered Academic Companion</p>
-      </header>
+    <div className="plain-landing">
 
-      {/* Main Content Area */}
-      <main className="main-content">
-        <section className="cta-section">
-          <h2>Ready to Level Up Your Studies?</h2>
-          <p>
-            Connect with peers, access smart tools, and master your subjects with ease.
-            StudyBuddy is the future of collaborative learning.
-          </p>
-          <div className="cta-buttons">
-            <button className="primary-btn">Create Account</button>
-            <button className="secondary-btn">Learn More →</button>
-          </div>
-        </section>
-      </main>
+      {/* Logo — top left */}
+      <div className="landing-logo">
+        <h1 className="main-title">StudyBuddy</h1>
+        <p className="landing-sub">By Bob2</p>
+      </div>
 
-      {/* Footer */}
-      <footer className="simple-footer">
-        <p>&copy; {new Date().getFullYear()} StudyBuddy Inc. All rights reserved.</p>
-      </footer>
+      {/* Center content */}
+      <div className="landing-boxes">
+        {subjects.map((s) =>
+          s.active ? (
+            <Link to={s.link} className="subject-box" key={s.id}>
+              <div className="box-top">
+                <div>
+                  <span className="box-code">{s.code}</span>
+                  <span className="box-label">{s.label}</span>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="box-desc">{s.desc}</p>
+            </Link>
+          ) : (
+            <div className="subject-box inactive" key={s.id}>
+              <div className="box-top">
+                <div>
+                  <span className="box-code">{s.code}</span>
+                  <span className="box-label">{s.label}</span>
+                </div>
+                <span className="box-soon">Soon</span>
+              </div>
+              <p className="box-desc">{s.desc}</p>
+            </div>
+          )
+        )}
+      </div>
+
     </div>
   );
 }

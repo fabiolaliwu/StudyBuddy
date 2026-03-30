@@ -5,12 +5,6 @@ import OS from './pages/OS/OS';
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Landing</Link>
-        <Link to="/os">OS</Link>
-      </nav>
-
-      {/* Page Switcher */}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/os" element={<OS />} />
