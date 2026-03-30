@@ -9,13 +9,16 @@
 .plain-landing {
   min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column; 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; 
   background: #fafaf9;
   position: relative;
   font-family: 'Instrument Sans', sans-serif;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 /* Subtle grid background */
@@ -33,18 +36,21 @@
 
 /* Logo — top left */
 .landing-logo {
-  position: absolute;
-  top: 44px;
-  left: 52px;
+  position: relative; 
+  width: 100%;
+  max-width: 480px;
+  /* CHANGED: Added margin-bottom to create a gap between the logo and the first box */
+  margin-bottom: 40px; 
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
+ 
 }
 
 .main-title {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 52px;
+  font-size: clamp(38px, 10vw, 52px); 
   font-weight: 400;
   color: #111;
   letter-spacing: -2px;
@@ -65,26 +71,23 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 100%;
-  max-width: 480px;
-  /* ✅ ADDED THIS: Pushes the boxes down so they don't overlap the logo area on desktop */
-  margin-top: 80px; 
+  /* ✅ CHANGE: Ensure it fills mobile width but stays small on PC */
+  width: 100%;       
+  max-width: 480px;  
 }
 
 .subject-box {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 24px 28px;
+  padding: 24px 24px;
   background: #fff;
-  border: 1px solid #ebebeb;
   border-radius: 6px;
   text-decoration: none;
   color: #111;
+  width: 100%; 
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-
-/* ... keep the rest of your subject-box styles exactly as they are ... */
 
 .subject-box:not(.inactive):hover {
   border-color: #222;
@@ -173,7 +176,7 @@
 /* --- Responsive Adjustments --- */
 @media (max-width: 600px) {
   .plain-landing {
-    padding-top: 140px; 
+    padding: 40px 16px;
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -186,8 +189,8 @@
   }
 
   .landing-logo {
-    top: 32px;
-    left: 24px;
+    text-align: left; 
+    margin-bottom: 30px;
   }
 
   .main-title {
@@ -196,5 +199,17 @@
 
   .subject-box {
     padding: 20px 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .landing-logo {
+    position: absolute;
+    top: 44px;
+    left: 52px;
+    margin-bottom: 0;
+  }
+  .landing-boxes {
+    /* Pushes boxes down on desktop to account for the absolute logo */
+    margin-top: 100px; 
   }
 }
