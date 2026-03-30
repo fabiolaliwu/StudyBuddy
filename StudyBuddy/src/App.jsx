@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Landing from './pages/landing';
-import OS from './pages/OS';
+import Landing from './pages/Landing'; 
+import OS from './pages/OS'; 
 
 function App() {
   return (
     <BrowserRouter>
+      {/* Navigation */}
       <nav>
         <Link to="/">Landing</Link>
         <Link to="/os">OS</Link>
@@ -18,4 +19,5 @@ function App() {
     </BrowserRouter>
   );
 }
+
 export default App;
