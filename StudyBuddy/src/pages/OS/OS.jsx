@@ -180,6 +180,167 @@ function OS() {
 ];
 
 
+const ipc_defs = [
+  {
+    q: "What is IPC?",
+    a: "inter-process communications, a mechanism that will allow cooperating processes to exchange data."
+  },
+  {
+    q: "What are two general classes of IPC (shared memory and message passing)?",
+    a: "Shared memory category and Message passing category"
+  },
+  {
+    q: "What is the idea of shared memory? What are advantages and disadvantages of shared memory?",
+    a: "OS can create a region that multiple processes can write and read, such a region is called shared memory. The idea is that processes can ask the OS to give them a chunk of memory so that they can read and write things in that memory.\nDisadvantages\nerror-prone, using shared requires a lot of thinking and planning and requires process synchronization. Needs extra checks to avoid errors.\ncannot use shared memory when two computers are connected through a network because they do not have direct access to each other.\nAdvantages\nfaster because it only needs OS help once and it is when creating the region in memory."
+  },
+  {
+    q: "What is the idea of message passing? What are the advantages and disadvantages of message passing?",
+    a: "Process A passes data to OS to process B, all data exchanges happen through OS. Without the OS, there is no way for processes to communicate with each other.\nDisadvantages\nslower compared to shared memory interaction because every message passing has to be done through the OS. Using OS help takes extra time. context switching\nAdvantages\nless error-prone, message passing is easier so it has fewer errors\nsending data through web server to communicate with other computers"
+  },
+  {
+    q: "Can shared memory kind of IPC communication be used for two processes running on two different computers? Why do you think so?",
+    a: "cannot use shared memory when two computers are connected through a network because they do not have direct access to each other."
+  },
+  {
+    q: "What is network (a bunch of computers connected together to exchange data)?",
+    a: "A bunch of computers connected together to exchange data."
+  },
+  {
+    q: "What is IP address? How does classic IP address (IPv4) look like?",
+    a: "numerical label assigned to each device connected to a network. A classic IPv4 address is 4 numbers separated by periods and each number is between 0 and 255. (e.g., 192.168.1.1)"
+  },
+  {
+    q: "Why IP address along isn’t enough for networking communications?",
+    a: "An IP address alone isn’t enough for networking communication because it only identifies the host (device) on a network, not which port on the device. Multiple programs can run on one device, so a port number is also needed to identify the program the data is meant for."
+  },
+  {
+    q: "What is networking port?",
+    a: "a unique numeric identifier assigned to every process in the system that wants to use the network"
+  },
+  {
+    q: "What are well-known ports? (the answer “first 1024 ports” is worth 0 points)",
+    a: "ports with predefined purposes. Starts with 0-1023 (his definition)"
+  },
+  {
+    q: "What is (networking) socket?",
+    a: "an endpoint for communication\nnetworking socket = combination of IP Address + networking port\n55.220.0.51:81"
+  },
+  {
+    q: "What is server (like in “web server” or “email server”)?",
+    a: "a computer on the network that receives requests and provides services to other computers on the network."
+  },
+  {
+    q: "What is client?",
+    a: "computer that can obtain information from a server."
+  },
+  {
+    q: "What is communication protocol?",
+    a: "set of rules and standards that defines how data is formatted, transmitted, and received between devices on a network."
+  },
+  {
+    q: "What is URL?",
+    a: "is the address to access resources on the internet, such as web pages, images, videos, or files. It is human understandable text used to access online web services."
+  },
+  {
+    q: "What is DNS?",
+    a: "separate computer that takes input URL and provides IP Address of the destination computer for the "
+  },
+  {
+    q: "What is RPC?",
+    a: "Remote Procedure Call (RPC): interprocess communication tool that allows you to easily start execution of a function of a faraway computer/server computer/computer on the internet from your computer."
+  }
+];
+
+
+const sync_defs = [
+  {
+    q: "What is thread of execution (a.k.a. just thread)?",
+    a: "independent execution of the same program code using a separate program counter."
+  },
+  {
+    q: "Why we might want to create new threads of execution instead of new processes?",
+    a: "memory efficient.\nfaster to create and delete\ncontext switching is faster\nbetter process utilization\nshared memory"
+  },
+  {
+    q: "Why we might want to create new processes instead of new threads?",
+    a: "when we want to call exec(fileName): call this API function, completely replaces the program code with the fileName. You cannot call exec(fileName) from a thread. You can but threads use the same code as other threads, so if you call exec(fileName), the whole program will be deleted, affecting other threads.\nfault independent: if you have a multithreaded program, and one thread messes up something, will affect the whole process."
+  },
+  {
+    q: "What do threads belonging to the same process share? What they don’t share?",
+    a: "Threads share: \nprogram code, text section. \ndata section, which contains global variables and static variables. \nheap, where dynamically allocation happens, is also shared between threads.\nThreads do not share: \nEach thread has its own stack. Programs are responsible to not overflow the stack."
+  },
+  {
+    q: "What are synchronization problems?",
+    a: "Programing problems that arise when you create multithreaded code or a program that exchanges data with other program."
+  },
+  {
+    q: "What synchronization hazards do you know?",
+    a: "Race condition and deadlock"
+  },
+  {
+    q: "What is shared resource?",
+    a: "a section shared by multiple processes."
+  },
+  {
+    q: "What is race condition (a.k.a. data race)?",
+    a: "error when we corrupt a shared resource because multiple threads/processes use it simultaneously and at least one of them tries to modify the shared source. (and the outcome of the executions depends on the ordered at which they were executed)"
+  },
+  {
+    q: "Explain how race condition can happen?",
+    a: "Race condition happens when two processes or threads are accessing data and at least one of them is modifying it.\nConsider {x = x + 1}. Translates into:\n1. Load x into a register.\n2. Increment the register\n3. Store result back to x.\nIf 2 threads do this simultaneously, both read the same, old value of x, both increment x independently and both write back the same incremented value. 1 increment is lost."
+  },
+  {
+    q: "Can race condition happen if only one party modifies the data and others are just reading? Can race condition happen if everybody is just reading?",
+    a: "Yes, race conditions still happen. But if everyone is just reading, then it doesn’t happen."
+  },
+  {
+    q: "What is critical section problem?",
+    a: "the problem of writing our code in such a way that the execution of different threads/processes does not overlap.\nCritical section: fragment of code that should not overlap with other processes’ critical section"
+  },
+  {
+    q: "What are the three properties of a good solution of a critical section problem.",
+    a: "mutual exclusion: only one critical section is active/can run at the time; one thread to the critical section, and the other threads cannot enter until the one that is in the critical section. \nprogress: shared resource is not idle if someone wants it. There should not be a situation where someone waits for the critical section when no one is in it.\nbounded waiting: make sure no one waits forever."
+  },
+  {
+    q: "Explain the idea of locking shared resources.",
+    a: "You would lock shared resources when a thread is in a critical section by acquiring a lock before entering a critical section and releasing it after leaving. Other threads must wait."
+  },
+  {
+    q: "What does it mean atomic function?",
+    a: "It’s a function that has two properties: \n1. interruptible: once it starts, it finishes. I cannot see this function half-completed. \n2. Only one copy of the atomic function can be executed at a time: Let’s say two threads super simultaneously arrive at the function and they both want to run it at the same time. Only one will be run, the other one waits for it to finish."
+  },
+  {
+    q: "What does it mean if the function is hardware implemented?",
+    a: "there is no program code for it, no general CPU instructions written in memory. The function is implemented with hardware circuitry and called with a single special CPU instruction."
+  },
+  {
+    q: "What is test_and_set instruction and what does it do?",
+    a: "function implemented in hardware that tests the value of a lock and sets the lock to be true no matter the original one, and returns the original value.\nbool test_and_set(bool &lock){\nbool old = lock;\nlock = true;\nreturn old;\n}"
+  },
+  {
+    q: "Simple solution of the critical section problem using test_and_set instruction. What is suboptimal in this solution?",
+    a: "while(test_and_set(globLock)== true){};\n//CRITICAL SECTION\nglobLock = false;\n(Suboptimal because it doesn’t have the “bounded waiting” property, in other words, it is not starvation-free)."
+  },
+  {
+    q: "Solution of the critical section problem using test_and_set instruction with the \"bounded waiting\" property.",
+    a: "#define N 16\nbool wait[N]; // N = number of threads/processes\nbool lock = false; \n\nwait[i] = true;\nwhile(test_and_set(lock) && wait[i]){};\nwait[i] = false;\n\n// CRITICAL SECTION\nint j = (i+1)%N;\nwhile(wait[j] != true && j!= i)\n j = (j+1)%N;\n\nif(i!=j)\n wait[j] = false;\nelse\n lock = false;"
+  },
+  {
+    q: "What does busy waiting mean? What is spinlock? Why is it inefficient? When is it still good?",
+    a: "busy waiting: waiting in an empty loop using the CPU constantly to check for something like a lock. It's not good because we wait and do nothing and use the CPU. \nSpinlock: lock that continuously uses the CPU waiting to access the lock. \nIt is still good when expected wait times are short and it is “cheaper” to wait while using the CPU than to perform context switch to another process."
+  },
+  {
+    q: "What is mutex? What does process do if it needs a mutex that is busy?",
+    a: "Lock that you can acquire and release. If it needs a mutex that is busy, it pauses somehow and waits for mutex to be free again before proceeding further."
+  },
+  {
+    q: "Be ready to use C++ std::mutex to protect critical sections of code.",
+    a: "#include <mutex>\nint glob=0;\nstd::mutex glob_mutex; \n\nglob_mutex.lock(); \nglob++; // Critical Section\nglob_mutex.unlock();"
+  }
+];
+
+
+
   const renderContent = () => {
     switch (activeTab) {
       case 'definitions':
@@ -241,8 +402,53 @@ function OS() {
               ))}
             </div>
 
+            
+            
+            <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">IPC</span>
+              <span className="divider-line"></span>
+            </div>
+    
+            <div className="definitions-grid">
+              {ipc_defs.map((item, index) => (
+                <div className="subject-box active-stat" key={index}>
+                  <div className="box-top">
+                    <span className="box-label">{item.q}</span>
+                  </div>
+                  <p className="box-desc">{item.a}</p>
+                </div>
+              ))}
+            </div>
 
 
+
+
+              <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">Synchronization </span>
+              <span className="divider-line"></span>
+            </div>
+    
+            <div className="definitions-grid">
+              {sync_defs.map((item, index) => (
+                <div className="subject-box active-stat" key={index}>
+                  <div className="box-top">
+                    <span className="box-label">{item.q}</span>
+                  </div>
+                  <p className="box-desc">{item.a}</p>
+                </div>
+              ))}
+            </div>
+
+
+
+
+
+
+
+
+              
 
 
 
