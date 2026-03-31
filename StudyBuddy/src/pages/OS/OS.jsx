@@ -336,6 +336,26 @@ const sync_defs = [
   {
     q: "Be ready to use C++ std::mutex to protect critical sections of code.",
     a: "#include <mutex>\nint glob=0;\nstd::mutex glob_mutex; \n\nglob_mutex.lock(); \nglob++; // Critical Section\nglob_mutex.unlock();"
+  },
+  {
+    q: "Producer-Consumer problem (a.k.a. Bounded Buffer problem) and its solution.",
+    a: "synchronization problem where the producer is one process and the consumer another one. The producer produces items and puts them in the buffer(shared resource) and the consumer consumes the items that are in the buffer. The race condition happens when the producer has not finished producing the item and the consumer wants to already take it. We try to avoid the race condition and arrange efficient use of resources, so we make the producer sleep once the buffer is full and wake up when it is empty. Consumers pause when the buffer is empty and wake as soon as the item appears. We do it by using two semaphores."
+  },
+  {
+    q: "Readers-Writers problem and its solution.",
+    a: "The Reader-Writers problem is where we have readers reading shared data while there is a writer modifying that shared data. This causes errors and corrupted results. It’s a synchronization problem that spurs race conditions. The solution involves making the writers wait while the readers are reading. Then, the writers can access the data when no reader is accessing it."
+  },
+  {
+    q: "Describe Dining Philosophers problem. What do philosophers represent? What do chopsticks represent?",
+    a: "synchronization problem at which Processes want to use a shared resource but cannot use it because of deadlock that's why it waits indefinitely for a shared resource. Philosophers represent processes and chopsticks represent shared resources."
+  },
+  {
+    q: "What is deadlock?",
+    a: "a bad situation when a group of processes or threads wait for each other and no one goes forward."
+  },
+  {
+    q: "Name 3 approaches to solving dining philosophers problem.",
+    a: "-add extra chopstick: not an option, this solution is kind of ok on paper, but it’s not in practice.\n-pick chopsticks together/simultaneously: deadlock is not possible, because you either succeed with both or fail.\n-asymmetric solution: some philosophers grab left and some right."
   }
 ];
 
