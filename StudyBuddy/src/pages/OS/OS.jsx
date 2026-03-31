@@ -509,7 +509,6 @@ const memory_defs = [
 
 
 
-
             <div className="course-divider">
               <span className="divider-line"></span>
               <span className="divider-text">Process</span>
@@ -548,8 +547,6 @@ const memory_defs = [
 
 
 
-
-
             <div className="course-divider">
               <span className="divider-line"></span>
               <span className="divider-text">Synchronization </span>
@@ -568,6 +565,8 @@ const memory_defs = [
             </div>
 
 
+
+
             <div className="course-divider">
               <span className="divider-line"></span>
               <span className="divider-text">Memory </span>
@@ -584,18 +583,6 @@ const memory_defs = [
                 </div>
               ))}
             </div>
-
-
-
-
-
-
-
-
-              
-
-
-
           </div>
         );
       case 'notes':
