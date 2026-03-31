@@ -461,9 +461,62 @@ const memory_defs = [
     q: "What is page fault?",
     a: "Situation when we need a page that is not in RAM right now. In this case, program pauses and OS load it from disk"
   }
-
 ];
 
+const cpu_defs = [
+  {
+    q: "What is the CPU scheduling about?",
+    a: "is about OS choosing which process is the next one to use the CPU and for how long. OS has a component called short term scheduler, which is a component responsible to choose the next process to use the CPU."
+  },
+  {
+    q: "What does the choice of a specific CPU scheduling algorithm depend on?",
+    a: "there are different CPU scheduling algorithms such as our home project, or having a ready queue which is FIFO. Different OS, use different CPU scheduling algorithm depending on the purpose."
+  },
+  {
+    q: "What is CPU burst? What is I/O burst?",
+    a: "CPU burst: period of time when a process wants to use CPU only. think about your program running, and it needs to do I/O operation.\nI/O burst: period of time when a process wants to use an I/O device. what happens after it? goes back to the ready queue."
+  },
+  {
+    q: "Why can it be beneficial to schedule short CPU burst processes to the CPU before long CPU burst processes?",
+    a: "short CPU burst processes before the long ones because you keep the ready queue short and minimize the waiting time."
+  },
+  {
+    q: "What does it mean a CPU scheduling algorithm is preemptive or non-preemptive?",
+    a: "Preemptive: when a process is in the middle of the CPU burst and is sent back to the ready queue because the CPU is needed for something more important.\nnon-preemptive: means that if a process gets to use the CPU, it runs until the end/ as long as it needs."
+  },
+  {
+    q: "What does it mean a CPU scheduling algorithm is starvation free?",
+    a: "no process in the ready queue will wait forever, the OS uses such a method that every process in the ready queue will use the CPU, no one can wait for the CPU forever. We don't care about waiting, but about not waiting for too long. It is nice to have it, but if we don't have this property it is also ok."
+  },
+  {
+    q: "First-Come-First-Served algorithm. Its idea, its advantages and disadvantages.",
+    a: "The idea is to treat the ready queue as a real line and it is non preemptive.\nAdvantages: \nfast: to choose the next one to use the CPU\nstarvation- free\nDisadvantages: \nlong waiting times: can keep ready queue long"
+  },
+  {
+    q: "Round-Robin algorithm. Its idea, its advantages, and disadvantages.",
+    a: "The idea is to treat the ready queue as a real line but this one is preemptive.\nThere is a time slice- max amount of time that a process can use the CPU in one take. After it runs the time slice amount, it goes to the ready queue and waits and finishes the remaining. \nExample: time slice = 100ms, CPU burst = 150ms. It runs 100ms, then go to the back of the ready queue, and wait. It finished the remaining 50ms.\nAdvantages: \nfast: to choose the next one to use the CPU\nstarvation- free\nit is fair\nDisadvantages: \nlong waiting times: can keep the ready queue long. "
+  },
+  {
+    q: "Priority scheduling. Its idea, its advantages, and disadvantages.",
+    a: "Every process has a priority, and it specifies how important a process is\nadvantages: . \nGive priority to the process with the highest priority. \nIt allows us to give priority to processes that we consider important.\ndisadvantages: \nnot starvation- free"
+  },
+  {
+    q: "Aging.",
+    a: "method to fight the starvation problem. priority increases by one if it sits there for a certain amount of seconds/time."
+  },
+  {
+    q: "Priority inversion and priority donation.",
+    a: "Priority Inversion: is a bad situation when a higher priority process waits for a lower priority process without a good reason. There is no reason for high to wait for medium. \nPriority donation: method to counter/fix priority inversions. As long as high waits for low, low process becomes as important as high."
+  },
+  {
+    q: "Real-time scheduling.",
+    a: "real-time scheduling is an approach where the OS ensures that the real-time process meets the execution deadline. Real time process is a process that has cpu scheduling deadline. OS should know about real time programs"
+  },
+  {
+    q: "Soft and hard real-time systems.",
+    a: "soft real-time: means OS knows about the existence of real time processes, and that they require special attention. I will try to meet the CPU scheduling deadline of a process, if I don't meet it, then i will just leave it there. But it gives no guaranties.\n\nhard real-time: the whole system has to meet the CPU scheduling deadline of processes and not meeting them is consider not acceptable."
+  }
+];
 
 
   const renderContent = () => {
@@ -575,6 +628,24 @@ const memory_defs = [
     
             <div className="definitions-grid">
               {memory_defs.map((item, index) => (
+                <div className="subject-box active-stat" key={index}>
+                  <div className="box-top">
+                    <span className="box-label">{item.q}</span>
+                  </div>
+                  <p className="box-desc">{item.a}</p>
+                </div>
+              ))}
+            </div>
+
+
+            <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">CPU Scheduling </span>
+              <span className="divider-line"></span>
+            </div>
+    
+            <div className="definitions-grid">
+              {cpu_defs.map((item, index) => (
                 <div className="subject-box active-stat" key={index}>
                   <div className="box-top">
                     <span className="box-label">{item.q}</span>
