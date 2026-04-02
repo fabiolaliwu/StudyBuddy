@@ -689,6 +689,11 @@ const cpu_defs = [
                 alt="Addresses" 
                 className="notes-image" 
             />
+            <img 
+                src="/page_table.png" 
+                alt="Page Table" 
+                className="notes-image" 
+            />
             </div>
     
         );
