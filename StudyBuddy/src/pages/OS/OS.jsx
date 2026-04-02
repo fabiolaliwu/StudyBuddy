@@ -658,9 +658,19 @@ const cpu_defs = [
         );
       case 'notes':
         return (
-          <div className="tab-pane">
-            <p className="ai-placeholder-text">Notes coming soon!</p>
-          </div>
+            <div className="tab-pane notes-container">
+                <img 
+                src="/memory.png" 
+                alt="memory" 
+                className="notes-image" 
+            />
+            <img 
+                src="/process_states.png" 
+                alt="Process States" 
+                className="notes-image" 
+            />
+            </div>
+    
         );
       case 'ai':
         return (
