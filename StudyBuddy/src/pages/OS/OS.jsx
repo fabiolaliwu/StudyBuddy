@@ -669,6 +669,16 @@ const cpu_defs = [
                 alt="Process States" 
                 className="notes-image" 
             />
+            <img 
+                src="/fork.png" 
+                alt="Fork Problem" 
+                className="notes-image" 
+            />
+            <img 
+                src="/fork2.png" 
+                alt="Fork Problem" 
+                className="notes-image" 
+            />
             </div>
     
         );

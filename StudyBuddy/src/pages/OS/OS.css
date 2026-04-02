@@ -155,37 +155,44 @@
   white-space: pre-wrap;
 }
 
-
 /* Container for the notes tab */
 .notes-container {
   display: flex;
-  flex-direction: column; /* Stacks images vertically */
-  align-items: center;    /* Centers them horizontally */
-  gap: 24px;              /* Adds space between the two images */
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Increased gap for better visual separation */
   width: 100%;
-  padding: 20px 0;
+  padding: 40px 20px;
 }
 
-/* Individual Image styling */
+/* Individual Image styling - Making them bigger */
 .notes-image {
-  width: 100%;           /* Allows the image to fill the container width */
-  max-width: 600px;      /* Prevents the image from getting too huge on desktop */
-  height: auto;          /* Maintains the correct aspect ratio */
-  border-radius: 8px;    /* Matches your subject-box aesthetic */
-  border: 1px solid #ebebeb; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  background: #fff;      /* Ensures a clean background if the image is transparent */
+  width: 100%;
+  /* CHANGED: Increased max-width from 600px to 900px or 100% 
+     to let them fill the screen more on desktop */
+  max-width: 900px; 
+  height: auto;
+  border-radius: 12px; /* Slightly rounder corners for a modern look */
+  border: 1px solid #ebebeb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Softer, larger shadow */
+  background: #fff;
+  transition: transform 0.3s ease; /* Subtle hover effect */
 }
 
-/* Mobile specific adjustment for iPhone SE and similar screens */
+.notes-image:hover {
+  transform: scale(1.01); /* Very slight zoom on hover */
+}
+
+/* Mobile specific adjustment */
 @media (max-width: 600px) {
   .notes-container {
-    padding: 10px;
-    gap: 16px;           /* Slightly tighter gap on mobile */
+    padding: 20px 10px;
+    gap: 24px;
   }
   
   .notes-image {
-    max-width: 100%;     /* Ensures it doesn't exceed the 375px viewport */
+    max-width: 100%; /* Ensures it fills the iPhone SE screen width */
+    border-radius: 8px;
   }
 }
 /* --- Mobile Responsive --- */
