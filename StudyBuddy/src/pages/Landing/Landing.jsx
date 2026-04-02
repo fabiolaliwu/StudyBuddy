@@ -16,24 +16,24 @@ const subjects = [
     label: 'Software Design and Analysis I',
     code: 'CSCI 135',
     desc: 'An intensive introduction to program development and problem solving. Focuses on designing, implementing, and evaluating programs using C++.',
-    link: null, // Update to '/135' if you create this page
-    active: false,
+    link: '/135', 
+    active: null,  
   },
   {
     id: '160',
     label: 'Computer Architecture I',
     code: 'CSCI 160',
     desc: 'Covers binary number representations, Boolean algebras, logic gates, combinational logic, flip-flops, and sequential circuits.',
-    link: null, // Update to '/160' if you create this page
-    active: false,
+    link: '/160', 
+    active: true,  
   },
   {
     id: 'db',
     label: 'Database Management',
     code: 'CSCI 435',
     desc: 'Study of hierarchical, network, and relational databases, including normalization theory and various query languages.',
-    link: null,
-    active: false,
+    link: '/db',   // ✅ Link updated
+    active: null,  // ✅ Set to true
   },
 ];
 
