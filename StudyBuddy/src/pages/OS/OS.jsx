@@ -694,6 +694,11 @@ const cpu_defs = [
                 alt="Page Table" 
                 className="notes-image" 
             />
+            <img 
+                src="/page_question.png" 
+                alt="Page Question" 
+                className="notes-image" 
+            />
             </div>
     
         );
