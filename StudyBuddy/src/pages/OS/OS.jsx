@@ -684,6 +684,11 @@ const cpu_defs = [
                 alt="Fork Problem" 
                 className="notes-image" 
             />
+            <img 
+                src="/addresses.png" 
+                alt="Addresses" 
+                className="notes-image" 
+            />
             </div>
     
         );
