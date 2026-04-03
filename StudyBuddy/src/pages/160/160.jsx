@@ -3,18 +3,24 @@ import { Link } from 'react-router-dom';
 import './160.css';
 
 function OS() {
-  const [activeTab, setActiveTab] = useState('definitions');
+  const [activeTab, setActiveTab] = useState('notes');
 
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'definitions':
-        return (
-          <div className="tab-pane">
-            soon
-          </div>
-        );
       case 'notes':
+        return (
+          <div className="tab-pane notes-container">
+            <p className="section-title">These are the notes for Computer Architecture I taken in Spring 2024 with Professor Maryash</p>
+                <img 
+                src="/decimal.png" 
+                alt="conversion" 
+                className="notes-image" 
+            />
+
+            </div>
+        );
+      case 'exercises':
         return (
             <div className="tab-pane notes-container">
                 soon
@@ -34,7 +40,7 @@ function OS() {
         </div>
 
         <div className="os-tabs-segmented">
-          {['definitions', 'notes'].map((tab) => (
+          {['notes', 'exercises'].map((tab) => (
             <div 
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
