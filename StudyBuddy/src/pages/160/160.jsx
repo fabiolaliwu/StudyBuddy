@@ -22,6 +22,16 @@ function OS() {
                 alt="conversion" 
                 className="notes-image" 
             />
+            <img 
+                src="/binary_add&sub.png" 
+                alt="conversion" 
+                className="notes-image" 
+            />
+            <img 
+                src="/hex_add&sub.png" 
+                alt="conversion" 
+                className="notes-image" 
+            />
 
             </div>
         );
