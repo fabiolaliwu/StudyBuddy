@@ -12,8 +12,13 @@ function OS() {
         return (
           <div className="tab-pane notes-container">
             <p className="section-title">These are the notes for Computer Architecture I taken in Spring 2024 with Professor Maryash</p>
-                <img 
+            <img 
                 src="/decimal.png" 
+                alt="conversion" 
+                className="notes-image" 
+            />
+             <img 
+                src="/hexadecimal.png" 
                 alt="conversion" 
                 className="notes-image" 
             />
