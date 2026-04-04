@@ -4,12 +4,14 @@ import OS from './pages/OS/OS';
 import Arc from './pages/160/160';
 import SND from './pages/135/135';
 import DB from './pages/DatabaseDesign/DatabaseDesign';
+import Portfolio from './pages/Portfolio/portfolio';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/landing" element={<Landing />} />
         <Route path="/os" element={<OS />} />
         <Route path="/160" element={<Arc />} />
         <Route path="/135" element={<SND />} />
