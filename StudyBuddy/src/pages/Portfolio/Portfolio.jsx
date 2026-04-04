@@ -129,7 +129,7 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
           <div className="resume-item">
             <div className="item-row">
                 <span className="institution"><Link to="https://capstonefall2025-frontend.onrender.com" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
-                  Loop (Socket.io, MongoDB, Bcrypt, Google Maps API)
+                  Loop (Socket.io, MongoDB, Bcrypt, Google Maps API) ↗
                 </Link></span>
               <span className="location-date">Aug 2025 – Dec 2025</span>
             </div>
@@ -145,7 +145,7 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
           <div className="resume-item">
             <div className="item-row">
               <span className="institution"><Link to="https://blind-spot.app" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
-                  World Description AI (React, Flask, Gemini VLM)
+                  World Description AI (React, Flask, Gemini VLM) ↗
                 </Link></span>
               <span className="location-date">Feb 2025 – Dec 2025</span>
             </div>
@@ -159,7 +159,9 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
 
           <div className="resume-item">
             <div className="item-row">
-              <span className="institution">Sign Language Translator (TensorFlow, MediaPipe, React)</span>
+              <span className="institution"><Link to="https://signlanguagetranslator-s0bb.onrender.com" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
+                  Sign Language Translator (TensorFlow, MediaPipe, React) ↗
+                </Link></span>
               <span className="location-date">Apr 2025 – May 2025</span>
             </div>
             <ul className="bullet-points">
