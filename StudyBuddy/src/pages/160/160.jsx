@@ -32,6 +32,11 @@ function OS() {
                 alt="conversion" 
                 className="notes-image" 
             />
+            <img 
+                src="/binary_mult.png" 
+                alt="conversion" 
+                className="notes-image" 
+            />
 
             </div>
         );
