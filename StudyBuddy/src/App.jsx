@@ -4,7 +4,7 @@ import OS from './pages/OS/OS';
 import Arc from './pages/160/160';
 import SND from './pages/135/135';
 import DB from './pages/DatabaseDesign/DatabaseDesign';
-import Portfolio from './pages/Portfolio/portfolio';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
   return (
