@@ -119,9 +119,9 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
               <span className="location-date">Mar 2026 – Present</span>
             </div>
             <ul className="bullet-points">
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>Building a React educational hub to provide CS students with technical definitions and lecture notes.</li>
+              <li>Engineering a responsive UI for seamless cross-device access to learning resources.</li>
+              <li>Streamlining TA operations by hosting assessments and technical materials to improve instructional efficiency.</li>
             </ul>
           </div>
 
