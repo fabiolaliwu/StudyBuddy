@@ -45,8 +45,7 @@ function Portfolio() {
               <span className="degree">Bachelor of Arts in Computer Science</span>
               <span className="gpa"> GPA: 3.77/4.0 (Cumulative) | 3.84/4.0 (Major)</span>
             </div>
-            <p className="item-details">Discrete Structures, Data Structures and Algorithms, Big Data, Operating Systems, Computer
-Vision, Artificial Intelligence, Database Management, Software Engineering, Computer Architecture.</p>
+            <p className="item-details">Discrete Structures, Data Structures and Algorithms, Big Data, Operating Systems, Computer Vision, Artificial Intelligence, Database Management, Software Engineering, Computer Architecture.</p>
           </div>
         </section>
 
@@ -69,7 +68,6 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
             </ul>
           </div>
 
-
           <div className="resume-item">
             <div className="item-row">
               <span className="institution">Google Software Engineer Program</span>
@@ -85,7 +83,6 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
             </ul>
           </div>
 
-
           <div className="resume-item">
             <div className="item-row">
               <span className="institution">CUNY Tech Prep</span>
@@ -100,10 +97,6 @@ Vision, Artificial Intelligence, Database Management, Software Engineering, Comp
               <li>Collaborated in agile teams of 4–6, shipping projects to production environments.</li>
             </ul>
           </div>
-
-
-
-
         </section>
 
         {/* PROJECTS */}
