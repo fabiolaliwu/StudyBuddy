@@ -19,13 +19,15 @@ function Portfolio() {
               <p className="about-text">
                 Hunter College Computer Science student ad that's it. I will fix this later </p>
             </div>
-            <div className="resume-contact hero-contact">
-              <a href="mailto:fabiliwu@gmail.com">fabiliwu@gmail.com</a>
-              <span className="separator">/</span>
-              <a href="https://linkedin.com/in/fabiolaliwu">LinkedIn</a>
-              <span className="separator">/</span>
-              <a href="https://github.com/fabiolaliwu">GitHub</a>
+
+            <div className="hero-contact-container">
+              <div className="os-tabs-segmented">
+                <a href="mailto:fabiliwu@gmail.com" className="tab-segment active">Email</a>
+                <a href="https://linkedin.com/in/fabiolaliwu" target="_blank" rel="noreferrer" className="tab-segment active">LinkedIn</a>
+                <a href="https://github.com/fabiolaliwu" target="_blank" rel="noreferrer" className="tab-segment active">GitHub</a>
+              </div>
             </div>
+            
             <div className="scroll-indicator">Scroll to view Resume ↓</div>
           </div>
         </div>
