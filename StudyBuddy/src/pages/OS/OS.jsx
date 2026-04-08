@@ -617,9 +617,6 @@ const cpu_defs = [
               ))}
             </div>
 
-
-
-
             <div className="course-divider">
               <span className="divider-line"></span>
               <span className="divider-text">Memory </span>
