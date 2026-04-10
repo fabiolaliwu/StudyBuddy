@@ -17,7 +17,7 @@ function Portfolio() {
             <div className="hero-about">
               <h2 className="section-title">About Me</h2>
               <p className="about-text">
-                Hunter College Computer Science student ad that's it. I will fix this later </p>
+                Hunter College Computer Science student andd that's it. Once my life is updated, I will have more to share!</p>
             </div>
 
             <div className="hero-contact-container">
