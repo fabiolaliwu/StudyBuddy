@@ -104,8 +104,6 @@ function Portfolio() {
         {/* PROJECTS */}
         <section className="resume-section">
           <h2 className="section-title">Projects</h2>
-
-
           <div className="resume-item">
             <div className="item-row">
               <span className="institution"><Link to="/landing" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
