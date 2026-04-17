@@ -118,7 +118,6 @@ function Portfolio() {
             </ul>
           </div>
 
-
           <div className="resume-item">
             <div className="item-row">
                 <span className="institution"><Link to="https://capstonefall2025-frontend.onrender.com" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
@@ -133,8 +132,6 @@ function Portfolio() {
             </ul>
           </div>
           
-
-
           <div className="resume-item">
             <div className="item-row">
               <span className="institution"><Link to="https://blind-spot.app" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
@@ -149,7 +146,6 @@ function Portfolio() {
             </ul>
           </div>
           
-
           <div className="resume-item">
             <div className="item-row">
               <span className="institution"><Link to="https://signlanguagetranslator-s0bb.onrender.com" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
@@ -163,13 +159,6 @@ function Portfolio() {
               <li>Reduced processing lag by 60% using MediaPipe to extract hand coordinates instead of raw pixels.</li>
             </ul>
           </div>
-
-
-          
-
-
-
-
         </section>
 
         {/* SKILLS */}
