@@ -160,7 +160,6 @@ function Portfolio() {
             </ul>
           </div>
         </section>
-
         {/* SKILLS */}
         <section className="resume-section">
           <h2 className="section-title">Skills & Languages</h2>
