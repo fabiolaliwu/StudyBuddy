@@ -106,6 +106,20 @@ function Portfolio() {
           <h2 className="section-title">Projects</h2>
           <div className="resume-item">
             <div className="item-row">
+              <span className="institution"><Link to="https://hunter-hacks-2026.onrender.com" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
+                  For The Culture (React, Flask, Gemini VLM, Google Maps API) ↗
+                </Link></span>
+              <span className="location-date">Apr 2026 – Present</span>
+            </div>
+            <ul className="bullet-points">
+              <li>Optimized AI-Map synchronization in React, reducing latency for a seamless mobile-first experience.</li>
+              <li>Architected a geospatial system with Google Maps API to visualize and manage location-specific data.</li>
+              <li>Built a full-stack AI platform using Gemini VLM to provide real-time cultural and situational context.</li>
+            </ul>
+          </div>
+
+          <div className="resume-item">
+            <div className="item-row">
               <span className="institution"><Link to="/landing" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '1px solid #1a1a1a' }}>
                   StudyBuddy ↗
                 </Link></span>
