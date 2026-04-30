@@ -706,6 +706,51 @@ const cpu_defs = [
             </div>
           </div>
         );
+      case 'project':
+        return (
+          <div className="tab-pane">
+            <div className="ai-chat-placeholder">
+                <h4>General Specifications</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- Make sure to ONLY have SimOS.cpp and SimOS.h filles, no main.cpp, no test.cpp.</p>
+                <p className="ai-placeholder-text">- Have your libraries in the .h and not the .cpp. It might not compile if you have it in the .cpp.</p>
+                <p className="ai-placeholder-text"></p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>SimOS(int numberOfDisks, unsigned long long amountOfRAM, unsigned int pageSize)</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- numberOfDisks is the total of disks that the OS has.</p>
+                <p className="ai-placeholder-text">- amountOfRAM is the total amount of memory to store the processes.</p>
+                <p className="ai-placeholder-text"></p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void NewProcess()</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- The first process' PID is 1, then it just keeps incrementing. DO NOT reuse PIDs even though the process is not in the system.</p>
+                <p className="ai-placeholder-text">- If nobody is using the CPU, the new process should use the CPU. Otherwise, push it to the ready queue.</p>
+                <p className="ai-placeholder-text">- Ready queue should be FIFO.</p>
+                <p className="ai-placeholder-text">- CPU can be idle, which means that CPU can be 'free'/no process using it.</p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void SimFork()</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- Fork the current process that's using the CPU and push it to the end of the ready queue.</p>
+                
+
+
+            </div>
+          </div>
+        );
+
       default: return null;
     }
   };
@@ -719,7 +764,7 @@ const cpu_defs = [
         </div>
 
         <div className="os-tabs-segmented">
-          {['definitions', 'notes', 'ai'].map((tab) => (
+          {['definitions', 'notes', 'project', 'ai'].map((tab) => (
             <div 
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
