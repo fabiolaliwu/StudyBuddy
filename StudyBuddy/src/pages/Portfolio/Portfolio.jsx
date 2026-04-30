@@ -64,7 +64,7 @@ function Portfolio() {
               <span className="degree">Undergraduate Researcher </span>
             </div>
             <ul className="bullet-points">
-              <li>Engineer an automated animation cleaning pipeline for a VR tea ceremony simulation, utilizing Neural Networks and Inverse Kinematics (IK) to refine raw motion data.</li>
+              <li>Engineer an automated animation cleaning pipeline for a VR tea ceremony simulation, utilizing Neural Networks and Inverse Kinematics(IK) to refine raw motion data.</li>
               <li>Develop AI-driven motion processing scripts in Unity to automate the correction of animation artifacts, significantly reducing manual cleaning time for complex 3D assets.</li>
               <li>Optimize character-object interaction by implementing procedural IK solutions, ensuring precise hand-to-object alignment for high-fidelity virtual interactions.</li>
             </ul>
