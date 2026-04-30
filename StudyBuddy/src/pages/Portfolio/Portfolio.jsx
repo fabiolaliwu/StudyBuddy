@@ -54,6 +54,21 @@ function Portfolio() {
         {/* EXPERIENCE */}
         <section className="resume-section">
           <h2 className="section-title">Experience</h2>
+
+          <div className="resume-item">
+            <div className="item-row">
+              <span className="institution">Visualization and Virtual Reality Lab, Hunter College</span>
+              <span className="location-date">Apr 2026 – Present</span>
+            </div>
+            <div className="item-row">
+              <span className="degree">Undergraduate Researcher </span>
+            </div>
+            <ul className="bullet-points">
+              <li>Engineer an automated animation cleaning pipeline for a VR tea ceremony simulation, utilizing Neural Networks and Inverse Kinematics (IK) to refine raw motion data.</li>
+              <li>Develop AI-driven motion processing scripts in Unity to automate the correction of animation artifacts, significantly reducing manual cleaning time for complex 3D assets.</li>
+              <li>Optimize character-object interaction by implementing procedural IK solutions, ensuring precise hand-to-object alignment for high-fidelity virtual interactions.</li>
+            </ul>
+          </div>
           
           <div className="resume-item">
             <div className="item-row">
@@ -61,12 +76,12 @@ function Portfolio() {
               <span className="location-date">Aug 2025 – Present</span>
             </div>
             <div className="item-row">
-              <span className="degree"> UTA- Operating Systems, Software Analysis & Design, Computer Architecture, Database Design</span>
+              <span className="degree"> Undergraduate Teaching Assistant</span>
             </div>
             <ul className="bullet-points">
-              <li>Conduct technical code reviews for 300+ students in Operating Systems and Software Design, enforcing best practices in C++ memory management, multithreading, and file I/O.</li>
-              <li>Debug complex systems-level projects, including CPU scheduling simulators and memory allocators, improving students' software reliability and design patterns.</li>
-              <li>Streamline course operations by collaborating with faculty to develop and audit technical assessments, ensuring rigorous evaluation of core computer science concepts.</li>
+              <li>Tutor 300+ students in Computer Architecture, Software Analysis and Design, Operating Systems, and Database Design.</li>
+              <li>Develop comprehensive course labs and tutorials for Database Design to streamline online learning and technical instruction.</li>
+              <li>Assist professors with grading and curriculum design, auditing technical assessments to ensure rigorous evaluation of CS concepts.</li>
             </ul>
           </div>
 
