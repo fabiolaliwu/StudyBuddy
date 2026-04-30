@@ -744,9 +744,45 @@ const cpu_defs = [
                 <h4>void SimFork()</h4>
                 <br></br>
                 <p className="ai-placeholder-text">- Fork the current process that's using the CPU and push it to the end of the ready queue.</p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void SimExit()</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- Current process terminates.</p>
+                <p className="ai-placeholder-text">- Release the memory used.</p>
+                <p className="ai-placeholder-text">- Terminate it's children, which also means children's children and so on. Alsc called cascading termination. TIP: have a helper function.</p>
+                <p className="ai-placeholder-text">- Check if its parent is called SimWait(), push the parent back to the ready queue if so.</p>
+                <p className="ai-placeholder-text">- If the parent has not called SimWait(), then make the child(current process) zombie, but still release the memory from the system.</p>
                 
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void SimWait()</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- The current process is moved away from the CPU and the ready queue because it's waiting for at least one of the children to call SimWait. What if it doesn't have children? IDK ask Shostak</p>
+                <p className="ai-placeholder-text">- If one of the children is already a zombie, then just delete the zombie. (Not all of them, just delete one of them. Could be any) The parent(currently using the CPU) keeps using the CPU.</p>
 
 
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void TimerInterrupt()</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- Push current process to the back of the ready queue, and run the next process in the ready queue.</p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void DiskReadRequest(int diskNumber, std::string fileName)</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- diskNumber is the number of the disk that we are trying to use to do reading of the file callled fileName.</p>
+                <p className="ai-placeholder-text">- Remember that the enumeration of the disks starts from zero.</p>
             </div>
           </div>
         );
