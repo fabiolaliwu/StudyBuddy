@@ -783,6 +783,71 @@ const cpu_defs = [
                 <br></br>
                 <p className="ai-placeholder-text">- diskNumber is the number of the disk that we are trying to use to do reading of the file callled fileName.</p>
                 <p className="ai-placeholder-text">- Remember that the enumeration of the disks starts from zero.</p>
+                <p className="ai-placeholder-text">- Every single I/O device has one ready queue, so means that every single disk has one ready queue.</p>
+                <p className="ai-placeholder-text">- The process that's currnetly using the CPU, should yield the CPU to the next process in the queue. If the ready queue is empty, then the CPU is free</p>
+                <p className="ai-placeholder-text">- TIP: you can have a data structure storing the processes that are doing I/O requests.</p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void DiskJobCompleted(int diskNumber)</h4>
+                <br></br>
+                <p className="ai-placeholder-text">- </p>
+
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>void AccessMemoryAddress(unsigned long long address)</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>int GetCPU()</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
+
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>{"std::deque<int> GetReadyQueue()"}</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
+
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>MemoryUsage GetMemory()</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
+
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>FileReadRequest GetDisk(int diskNumber)</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
+
+
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h4>{"std::deque<FileReadRequest> GetDiskQueue(int diskNumber)"}</h4>
+                <br></br>
+                <p className="ai-placeholder-text"></p>
             </div>
           </div>
         );
