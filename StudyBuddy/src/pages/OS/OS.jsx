@@ -811,7 +811,8 @@ const cpu_defs = [
                 <br></br>
                 <h4>int GetCPU()</h4>
                 <br></br>
-                <p className="ai-placeholder-text"></p>
+                <p className="ai-placeholder-text">- Returns the PID of the process currently using the CPU. </p>
+                <p className="ai-placeholder-text">- If CPU is idle it returns NO_PROCESS/zero.</p>
 
 
                 <br></br>
@@ -820,7 +821,8 @@ const cpu_defs = [
                 <br></br>
                 <h4>{"std::deque<int> GetReadyQueue()"}</h4>
                 <br></br>
-                <p className="ai-placeholder-text"></p>
+                <p className="ai-placeholder-text">- Return a deque with the processes in the ready queue.</p>
+                <p className="ai-placeholder-text">- DO NOT retrun the process thats currently using the CPU.</p>
 
 
                 <br></br>
@@ -829,7 +831,12 @@ const cpu_defs = [
                 <br></br>
                 <h4>MemoryUsage GetMemory()</h4>
                 <br></br>
-                <p className="ai-placeholder-text"></p>
+                <p className="ai-placeholder-text">- Returns the vector of memory used.</p>
+                <p className="ai-placeholder-text">- Frames, not pages.</p>
+                <p className="ai-placeholder-text">- GetMemory returns MemoryUsage vector describing locations of all processes in memory.</p>
+                <p className="ai-placeholder-text">- Terminated “zombie” processes don’t use memory, so they don’t contribute to memory usage.</p>
+                <p className="ai-placeholder-text">- Processes appear in the MemoryUsage vector in the same order they appear in memory (from low addresses to high).</p>
+
 
 
                 <br></br>
@@ -838,9 +845,8 @@ const cpu_defs = [
                 <br></br>
                 <h4>FileReadRequest GetDisk(int diskNumber)</h4>
                 <br></br>
-                <p className="ai-placeholder-text"></p>
-
-
+                <p className="ai-placeholder-text">- Returns the FileReadRequest object that contains the PID and the fileName that's currently using the disk diskNumber. </p>
+                <p className="ai-placeholder-text">- If the disk is idle, then i just returns the default object.</p>
 
                 <br></br>
                 <br></br>
@@ -848,7 +854,7 @@ const cpu_defs = [
                 <br></br>
                 <h4>{"std::deque<FileReadRequest> GetDiskQueue(int diskNumber)"}</h4>
                 <br></br>
-                <p className="ai-placeholder-text"></p>
+                <p className="ai-placeholder-text">- Returns a deque of FileReadRequest objects that are waiting to use the disk diskNumber.</p>
             </div>
           </div>
         );
