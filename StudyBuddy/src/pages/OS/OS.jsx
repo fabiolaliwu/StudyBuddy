@@ -793,7 +793,8 @@ const cpu_defs = [
                 <br></br>
                 <h4>void DiskJobCompleted(int diskNumber)</h4>
                 <br></br>
-                <p className="ai-placeholder-text">- </p>
+                <p className="ai-placeholder-text">- The process that's currnetly doing the job, ends its dutty and resturns back to the ready queue to use the CPU. </p>
+                <p className="ai-placeholder-text">- The next one in the waiting queue for that specifc disk goes next to use the disk.</p>
 
 
                 <br></br>
