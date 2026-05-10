@@ -35,6 +35,14 @@ const subjects = [
     link: '/db',   // ✅ Link updated
     active: null,  // ✅ Set to true
   },
+  {
+    id: 'vr',
+    label: 'Research notes',
+    code: 'VR',
+    desc: 'Personal notes for my research in the VR Lab at Hunter College',
+    link: '/vr',   // ✅ Link updated
+    active: true, 
+  },
 ];
 
 function Landing() {

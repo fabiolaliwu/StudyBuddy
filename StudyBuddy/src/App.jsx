@@ -4,6 +4,7 @@ import OS from './pages/OS/OS';
 import Arc from './pages/160/160';
 import SND from './pages/135/135';
 import DB from './pages/DatabaseDesign/DatabaseDesign';
+import VR from './pages/Research/Research';
 import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/160" element={<Arc />} />
         <Route path="/135" element={<SND />} />
         <Route path="/db" element={<DB />} />
+        <Route path="/vr" element={<VR />} />
       </Routes>
     </BrowserRouter>
   );
