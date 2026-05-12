@@ -32,6 +32,14 @@ function Research() {
                 <p className="ai-placeholder-text">
                     <a href="https://www.youtube.com/watch?v=4wQVxj_0Mdo" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
                 </p>
+                <p className="ai-placeholder-text">
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0165237022003722" target="_blank" rel="noopener noreferrer">Inversed Kinetimatic Method</a>
+                </p>
+                <p className="ai-placeholder-text">
+                    <a href="https://andreasaristidou.com/publications/papers/IK_survey.pdf" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
+                </p>
+
+                
 
                 
                 
