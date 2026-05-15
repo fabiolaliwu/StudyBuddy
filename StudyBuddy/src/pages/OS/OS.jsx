@@ -460,6 +460,10 @@ const memory_defs = [
   {
     q: "What is page fault?",
     a: "Situation when we need a page that is not in RAM right now. In this case, program pauses and OS load it from disk"
+  },
+  {
+    q: "What are the options for MMU to deal with the page table (we discussed three of them)? What are the disadvantagies of those options we don't use?",
+    a: " "
   }
 ];
 
