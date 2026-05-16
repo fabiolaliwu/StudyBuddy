@@ -463,7 +463,7 @@ const memory_defs = [
   },
   {
     q: "What are the options for MMU to deal with the page table (we discussed three of them)? What are the disadvantagies of those options we don't use?",
-    a: " "
+    a: "1. Keep page table inside MMU. \n2.Keep inside RAM. \n3. Store the most important pages in MMU (TLB)."
   }
 ];
 
