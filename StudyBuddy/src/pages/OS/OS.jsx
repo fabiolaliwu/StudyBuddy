@@ -464,6 +464,10 @@ const memory_defs = [
   {
     q: "What are the options for MMU to deal with the page table (we discussed three of them)? What are the disadvantages of those options we don't use?",
     a: "1. Keep page table inside MMU(disadvantage: slow context switch). \n2.Keep inside RAM(disadvantage: RAM slow). \n3. Store the most important pages in MMU/having a TBL(disadvantage: context switch and slow because it has to check RAM)."
+  },
+  {
+    q: "What is on-demand paging (a.k.a demand paging)?",
+    a: "Strategy used in virtual memory systems which consist of loading pages only as they are needed/demanded during program execution"
   }
 ];
 
