@@ -258,6 +258,14 @@ const sync_defs = [
     a: "independent execution of the same program code using a separate program counter."
   },
   {
+    q: "What is TLS (thread local storage)?",
+    a: "Tool that allows threads to have their own private copies of variables that appear global. Each thread might need its own copy of certain data. \nFor example, in a transaction-processing system, we might service each transaction in a separate thread. Furthermore, each transaction might be assigned a unique identifier. To associate each thread with its unique transaction identifier, we could use thread-local storage."
+  },
+  {
+    q: "What is a thread pool?",
+    a: "The general idea behind a thread pool is to create a number of threads at start-up and place them into a pool, where they sit and wait for work. When a server receives a request, rather than creating a thread, it instead submits the request to the thread pool and resumes waiting for additional requests."
+  },
+  {
     q: "Why we might want to create new threads of execution instead of new processes?",
     a: "memory efficient.\nfaster to create and delete\ncontext switching is faster\nbetter process utilization\nshared memory"
   },
