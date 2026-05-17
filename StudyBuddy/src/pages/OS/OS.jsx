@@ -2,6 +2,33 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './OS.css';
 
+function Flashcard({ q, a }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div 
+      className="flashcard-container" 
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <div className={`flashcard-inner ${isFlipped ? 'is-flipped' : ''}`}>
+        
+        {/* Front of Card (Question) */}
+        <div className="flashcard-front subject-box active-stat">
+          <div className="box-top">
+            <span className="box-label">{q}</span>
+          </div>
+        </div>
+
+        {/* Back of Card (Answer) */}
+        <div className="flashcard-back subject-box active-stat">
+          <p className="box-desc">{a}</p>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 function OS() {
   const [activeTab, setActiveTab] = useState('definitions');
 
@@ -556,15 +583,9 @@ const cpu_defs = [
             
             <div className="definitions-grid">
               {defs260.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
-
 
 
             <div className="course-divider">
@@ -575,12 +596,7 @@ const cpu_defs = [
             
             <div className="definitions-grid">
               {OS_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
 
@@ -594,12 +610,7 @@ const cpu_defs = [
             
             <div className="definitions-grid">
               {process_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
 
@@ -612,12 +623,7 @@ const cpu_defs = [
     
             <div className="definitions-grid">
               {ipc_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
 
@@ -631,12 +637,7 @@ const cpu_defs = [
     
             <div className="definitions-grid">
               {sync_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
 
@@ -648,12 +649,7 @@ const cpu_defs = [
     
             <div className="definitions-grid">
               {memory_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
 
@@ -666,12 +662,7 @@ const cpu_defs = [
     
             <div className="definitions-grid">
               {cpu_defs.map((item, index) => (
-                <div className="subject-box active-stat" key={index}>
-                  <div className="box-top">
-                    <span className="box-label">{item.q}</span>
-                  </div>
-                  <p className="box-desc">{item.a}</p>
-                </div>
+                <Flashcard key={index} q={item.q} a={item.a} />
               ))}
             </div>
           </div>
