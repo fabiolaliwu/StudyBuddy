@@ -216,14 +216,15 @@
     text-align: center;
   }
 }
+/* --- FLASHCARDS --- */
 
 /* Container provides the 3D space */
 .flashcard-container {
   background-color: transparent;
-  perspective: 1000px; /* Gives the 3D depth effect */
+  perspective: 1000px; 
   cursor: pointer;
   width: 100%;
-  min-height: 200px; /* Adjust based on how tall you want your cards */
+  height: 100%; /* Allows it to stretch to the grid row height */
 }
 
 /* The inner container that actually rotates */
@@ -231,8 +232,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); /* Slightly smoother flip animation */
   transform-style: preserve-3d;
+  
+  /* NEW: Use CSS Grid to stack the front and back without absolute positioning */
+  display: grid; 
 }
 
 /* Triggered when state changes to true */
@@ -242,7 +246,9 @@
 
 /* Shared styles for front and back */
 .flashcard-front, .flashcard-back {
-  position: absolute;
+  /* NEW: Both occupy row 1, column 1. This stacks them on top of each other! */
+  grid-area: 1 / 1; 
+  
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -254,14 +260,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
   box-sizing: border-box;
 }
 
 /* Back of the card needs to start flipped so it faces the right way when revealed */
 .flashcard-back {
   transform: rotateY(180deg);
-  overflow-y: auto; /* Allows scrolling if the answer is really long */
 }
 
 /* Removes standard hover styling from the original boxes if it conflicts with the flip */
