@@ -725,6 +725,15 @@ const cpu_defs = [
                 alt="Fork Problem" 
                 className="notes-image" 
             />
+
+            <br></br>
+            <br></br> 
+            <div className="course-divider">
+              <span className="divider-line"></span>
+              <span className="divider-text">AFTER THE MIDTERM</span>
+              <span className="divider-line"></span>
+            </div>
+
             <img 
                 src="/addresses.png" 
                 alt="Addresses" 
@@ -742,6 +751,26 @@ const cpu_defs = [
             />
             <img 
                 src="/raceCondition.png" 
+                alt="Page Question" 
+                className="notes-image" 
+            />
+            <img 
+                src="/lock&set.png" 
+                alt="Page Question" 
+                className="notes-image" 
+            />
+            <img 
+                src="/boundedWaiting.png" 
+                alt="Page Question" 
+                className="notes-image" 
+            />
+            <img 
+                src="/mutex.png" 
+                alt="Page Question" 
+                className="notes-image" 
+            />
+            <img 
+                src="/semaphore.png" 
                 alt="Page Question" 
                 className="notes-image" 
             />
