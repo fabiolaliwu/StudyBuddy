@@ -24,7 +24,7 @@ function Flashcard({ q, a }) {
   }, []);
 
   const handleCardClick = (e) => {
-    setIsFlipped(true); // Flip to the back
+    setIsFlipped(!isFlipped); // Flip to the back
     e.stopPropagation(); // Stop the click from instantly triggering the document listener
   };
 
