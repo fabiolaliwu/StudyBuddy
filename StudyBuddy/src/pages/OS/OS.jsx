@@ -1,14 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './OS.css';
 
 function Flashcard({ q, a }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    // Check if the user clicked outside the flashcard
+    const handleClickOutside = (event) => {
+      if (cardRef.current && !cardRef.current.contains(event.target)) {
+        setIsFlipped(false); // Flip back to the front
+      }
+    };
+
+    // Bind the event listener to the document
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    // Clean up the listener when the component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleCardClick = (e) => {
+    setIsFlipped(true); // Flip to the back
+    e.stopPropagation(); // Stop the click from instantly triggering the document listener
+  };
 
   return (
     <div 
       className="flashcard-container" 
-      onClick={() => setIsFlipped(!isFlipped)}
+      ref={cardRef}
+      onClick={handleCardClick}
+      style={{ cursor: isFlipped ? 'default' : 'pointer' }}
     >
       <div className={`flashcard-inner ${isFlipped ? 'is-flipped' : ''}`}>
         
