@@ -462,8 +462,8 @@ const memory_defs = [
     a: "Situation when we need a page that is not in RAM right now. In this case, program pauses and OS load it from disk"
   },
   {
-    q: "What are the options for MMU to deal with the page table (we discussed three of them)? What are the disadvantagies of those options we don't use?",
-    a: "1. Keep page table inside MMU. \n2.Keep inside RAM. \n3. Store the most important pages in MMU (TLB)."
+    q: "What are the options for MMU to deal with the page table (we discussed three of them)? What are the disadvantages of those options we don't use?",
+    a: "1. Keep page table inside MMU(disadvantage: slow context switch). \n2.Keep inside RAM(disadvantage: RAM slow). \n3. Store the most important pages in MMU/having a TBL(disadvantage: context switch and slow because it has to check RAM)."
   }
 ];
 
