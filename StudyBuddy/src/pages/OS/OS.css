@@ -236,7 +236,6 @@
   display: grid; 
 }
 
-/* ✅ Added back: Triggered via JavaScript click event */
 .flashcard-inner.is-flipped {
   transform: rotateY(180deg);
 }

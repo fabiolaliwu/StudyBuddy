@@ -713,14 +713,6 @@ const cpu_defs = [
             </div>
     
         );
-      case 'ai':
-        return (
-          <div className="tab-pane">
-            <div className="ai-chat-placeholder">
-                <p className="ai-placeholder-text">AI Helper coming soon!</p>
-            </div>
-          </div>
-        );
       case 'project':
         return (
           <div className="tab-pane">
@@ -887,7 +879,7 @@ const cpu_defs = [
         </div>
 
         <div className="os-tabs-segmented">
-          {['definitions', 'notes', 'project', 'ai'].map((tab) => (
+          {['definitions', 'notes', 'project'].map((tab) => (
             <div 
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
