@@ -266,6 +266,10 @@ const sync_defs = [
     a: "The general idea behind a thread pool is to create a number of threads at start-up and place them into a pool, where they sit and wait for work. When a server receives a request, rather than creating a thread, it instead submits the request to the thread pool and resumes waiting for additional requests."
   },
   {
+    q: "How to create a thread with std::thread?",
+    a: "#include <iostream>\nusing  namespace std;\n#include <thread>\n\nvoid Greet(const string &name){\ncout << name << endl;\n}\nint main(){\nstd::thread t1{Greet, “Thread 1”};\ncout << “main” << endl;\nreturn 0;\n}"
+  },
+  {
     q: "Why we might want to create new threads of execution instead of new processes?",
     a: "memory efficient.\nfaster to create and delete\ncontext switching is faster\nbetter process utilization\nshared memory"
   },
