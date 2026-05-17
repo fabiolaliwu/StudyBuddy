@@ -270,6 +270,10 @@ const sync_defs = [
     a: "#include <iostream>\nusing  namespace std;\n#include <thread>\n\nvoid Greet(const string &name){\ncout << name << endl;\n}\nint main(){\nstd::thread t1{Greet, “Thread 1”};\ncout << “main” << endl;\nreturn 0;\n}"
   },
   {
+    q: "What does std::thread::join() do? Why do we need it?",
+    a: "join() pauses/blocks the thread that called it until the target thread completely finishes its execution. W indeed it because it prevents the program from crashing(std::terminate), premature shutdowns(main exists before the child threads, and safe synchronization."
+  },
+  {
     q: "Why we might want to create new threads of execution instead of new processes?",
     a: "memory efficient.\nfaster to create and delete\ncontext switching is faster\nbetter process utilization\nshared memory"
   },
