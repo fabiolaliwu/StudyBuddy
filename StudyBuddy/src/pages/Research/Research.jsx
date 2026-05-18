@@ -39,10 +39,30 @@ function Research() {
                     <a href="https://andreasaristidou.com/publications/papers/IK_survey.pdf" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
                 </p>
 
-                
 
-                
-                
+                <br></br>
+                <br></br>
+                <h3>May 13th</h3>
+                <p className="ai-placeholder-text">Inverse kinematics (IK) is a method used in animation, robotics, and VR to figure out how joints should move so that a body part reaches a target position.</p>
+                <br></br>
+                <h4>How to see the curves of the animation:</h4>- Go to Assets/assets/MoCap/tea master body take 1 (an animation window will pop up)<br></br>- Selecting Kimono1 in Hierarchy. <br></br>- Go back to the animation window, and click on Curves. You will see the noises/inpurities in every single section.
+                <br></br> <br></br>
+
+                <h4>Applying IK to the Unity avatar</h4>
+                - Download Animation Rigging.
+                <br></br>
+                The "Rig" is the entire structural framework you build to control a character. In the Unity project, Rig 1 and your Generic_Finger_Rig objects are the containers for this system. A rig can contain many different types of tools such as mechanisms to move arms, controllers for eyes, or scripts for clothing physics.
+
+                <br></br><br></br>
+                <h4>Generic vs Humanoid Animations</h4>
+                The current avatar's animation type is generic, which does not care about anatomy. It is meant for non-human models (quadrupeds, monsters, vehicles, capes) or bipedal models where you don't need human-specific features. It simply imports the bone hierarchy exactly as it was built in your 3D modeling software.
+                Animations are bound strictly to the specific bone names and hierarchy of the rig they were made for. If you want to share a Generic animation between two different characters, their skeleton structures and bone names must match exactly.
+                Does not have built-in human IK assumptions. If you want to use IK on a Generic rig (like a robot arm or a spider leg), you have to set up custom IK solvers manually.
+                More lightweight and performant. The engine reads the raw animation curves and applies them directly to the local transform of the bones without any extra translation layers.
+                <br></br><br></br>However, we want the avatar to be humanoid because it expects a specific, standard bipedal skeleton anatomy (two arms, two legs, a spine, head, etc.). The engine requires you to explicitly map the character’s bones to a standardized "human template."
+                The engine translates the skeleton into a universal human map, retargeting is seamless. You can take a walking animation made for a 6-foot tall warrior and apply it to a 3-foot tall goblin, and the engine will automatically scale the motion to fit the new proportions.
+                Engines provide built-in, advanced features specifically for humans. This includes automatic Inverse Kinematics (IK) for hands and feet (essential for making feet plant properly on uneven terrain) and muscle-limit constraints to prevent joints from bending in anatomically impossible ways.
+                Slightly more computationally expensive upfront because the engine has to constantly translate the animation data through its internal humanoid bone map at runtime.
 
             </div>
           </div>
