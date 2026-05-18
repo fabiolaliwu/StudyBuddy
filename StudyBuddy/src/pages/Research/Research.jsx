@@ -17,13 +17,11 @@ function Research() {
                 <p className="ai-placeholder-text">Inverse Kinematics approach: focused on the relationship between joints</p>
 
                 <br></br>
-                <br></br>
                 <h4>Set up</h4>
                 <p className="ai-placeholder-text">- Download Unity Hub</p>
                 <p className="ai-placeholder-text">- Download Blender</p>
                 <p className="ai-placeholder-text">- Download Github Desktop</p>
 
-                <br></br>
                 <br></br>
                 <h4>Resources</h4>
                 <p className="ai-placeholder-text">
@@ -40,9 +38,9 @@ function Research() {
                 </p>
 
 
-                <br></br>
-                <br></br>
-                <h3>May 13th</h3>
+                <br></br><br></br>
+                <br></br><br></br>
+                <h2>May 13th</h2>
                 <p className="ai-placeholder-text">Inverse kinematics (IK) is a method used in animation, robotics, and VR to figure out how joints should move so that a body part reaches a target position.</p>
                 <br></br>
                 <h4>How to see the curves of the animation:</h4>- Go to Assets/assets/MoCap/tea master body take 1 (an animation window will pop up)<br></br>- Selecting Kimono1 in Hierarchy. <br></br>- Go back to the animation window, and click on Curves. You will see the noises/inpurities in every single section.
