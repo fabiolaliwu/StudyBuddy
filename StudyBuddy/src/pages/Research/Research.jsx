@@ -24,24 +24,16 @@ function Research() {
 
                 <br></br>
                 <h4>Resources</h4>
-                <p className="ai-placeholder-text">
-                    <a href="https://www.youtube.com/watch?v=xD7qUfSOGOE" target="_blank" rel="noopener noreferrer">Japanese Tea Ceremony</a>
-                </p>
-                <p className="ai-placeholder-text">
-                    <a href="https://www.youtube.com/watch?v=4wQVxj_0Mdo" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
-                </p>
-                <p className="ai-placeholder-text">
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0165237022003722" target="_blank" rel="noopener noreferrer">Inversed Kinetimatic Method</a>
-                </p>
-                <p className="ai-placeholder-text">
-                    <a href="https://andreasaristidou.com/publications/papers/IK_survey.pdf" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
-                </p>
+                  <a href="https://www.youtube.com/watch?v=xD7qUfSOGOE" target="_blank" rel="noopener noreferrer">Japanese Tea Ceremony</a><br></br>
+                  <a href="https://www.youtube.com/watch?v=4wQVxj_0Mdo" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a><br></br>
+                  <a href="https://www.sciencedirect.com/science/article/abs/pii/S0165237022003722" target="_blank" rel="noopener noreferrer">Inversed Kinetimatic Method</a><br></br>
+                  <a href="https://andreasaristidou.com/publications/papers/IK_survey.pdf" target="_blank" rel="noopener noreferrer">Hands motions and Tea Master's posture</a>
 
 
                 <br></br><br></br>
                 <br></br><br></br>
                 <h2>May 13th</h2>
-                <p className="ai-placeholder-text">Inverse kinematics (IK) is a method used in animation, robotics, and VR to figure out how joints should move so that a body part reaches a target position.</p>
+                Inverse kinematics (IK) is a method used in animation, robotics, and VR to figure out how joints should move so that a body part reaches a target position.
                 <br></br>
                 <h4>How to see the curves of the animation:</h4>- Go to Assets/assets/MoCap/tea master body take 1 (an animation window will pop up)<br></br>- Selecting Kimono1 in Hierarchy. <br></br>- Go back to the animation window, and click on Curves. You will see the noises/inpurities in every single section.
                 <br></br> <br></br>
@@ -69,11 +61,12 @@ function Research() {
                 <br></br>- Add the Team Room Scene.fbx from MoCap/Motive to the project's MoCap and transform it to humanoid animation type.
                 <br></br>- Do the same thing for your avatar, in this case Doozy. Click on Doozy inthe Hierarchy, then select the Rig tab and change the animation type from generic to humanoid, and click on apply.
                 <br></br>- Doozy might be frozen. If it is, click on the animator in the timeline and select apply scene offsets.
+                <br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
+                
                 <br></br><br></br>Doozy is floatig when it is walking and normal when it bends down, and viceversa.
                 <br></br>Fix: <br></br>- Build elevator: we create a new empty and call it Doozy_Elevate and drag Doozy inside.
                 <br></br>- Record the height fix: have a new Doozy_Elevate animation and start recording. Click on Doozy to modify the height. Once it's done, just save it.
                 <br></br>*idk why tf is playing it in the same place. I'll figure it out tomorrow.
-                <br></br><br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
                 
 
             </div>
