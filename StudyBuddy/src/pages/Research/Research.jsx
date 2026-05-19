@@ -62,6 +62,11 @@ function Research() {
                 Engines provide built-in, advanced features specifically for humans. This includes automatic Inverse Kinematics (IK) for hands and feet (essential for making feet plant properly on uneven terrain) and muscle-limit constraints to prevent joints from bending in anatomically impossible ways.
                 Slightly more computationally expensive upfront because the engine has to constantly translate the animation data through its internal humanoid bone map at runtime.
 
+                <br></br><br></br>
+                <h4>Humanoid Avatar from Mixamo</h4>
+                - Duplicate asset file, not the whole project/folder.
+                <br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
+
             </div>
           </div>
         );
