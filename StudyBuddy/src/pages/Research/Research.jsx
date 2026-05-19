@@ -68,6 +68,11 @@ function Research() {
                 <br></br>- Record the height fix: have a new Doozy_Elevate animation and start recording. Click on Doozy to modify the height. Once it's done, just save it.
                 <br></br>*idk why tf is playing it in the same place. I'll figure it out tomorrow.
                 
+                <br></br><br></br><h4>Fixing the hands</h4>
+                The animation was recorded without wearing a standard optical marker or inertial tracking suit with a head-mounted camera (likely for facial capture), but their hands are completely bare. No reflective markers on the fingers, and no data gloves.
+                When the data was exported, the finger joints were left entirely blank, so Unity defaults them to their straight, unmoving T-pose state.
+                However, we can fix it within Unity by using an Avatar Mask to layer a natural hand pose over the recording.
+
 
             </div>
           </div>
