@@ -69,8 +69,11 @@ function Research() {
                 <br></br>- Add the Team Room Scene.fbx from MoCap/Motive to the project's MoCap and transform it to humanoid animation type.
                 <br></br>- Do the same thing for your avatar, in this case Doozy. Click on Doozy inthe Hierarchy, then select the Rig tab and change the animation type from generic to humanoid, and click on apply.
                 <br></br>- Doozy might be frozen. If it is, click on the animator in the timeline and select apply scene offsets.
-                
-                <br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
+                <br></br><br></br>Doozy is floatig when it is walking and normal when it bends down, and viceversa.
+                <br></br>Fix: <br></br>- Build elevator: we create a new empty and call it Doozy_Elevate and drag Doozy inside.
+                <br></br>- Record the height fix: have a new Doozy_Elevate animation and start recording. Click on Doozy to modify the height. Once it's done, just save it.
+                <br></br>*idk why tf is playing it in the same place. I'll figure it out tomorrow.
+                <br></br><br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
                 
 
             </div>
