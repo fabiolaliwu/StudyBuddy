@@ -68,6 +68,8 @@ function Research() {
                 <br></br>- Translate Humanoid assets into animation file.
                 <br></br>- Add the Team Room Scene.fbx from MoCap/Motive to the project's MoCap and transform it to humanoid animation type.
                 <br></br>- Do the same thing for your avatar, in this case Doozy. Click on Doozy inthe Hierarchy, then select the Rig tab and change the animation type from generic to humanoid, and click on apply.
+                <br></br>- Doozy might be frozen. If it is, click on the animator in the timeline and select apply scene offsets.
+                
                 <br></br>Why isn't it working? The .anim file, which is why the Rig tab is missing, the Muscles: 0 readout right there in the Inspector, confirming this specific file doesn't have the Humanoid data yet.
                 
 
