@@ -82,6 +82,14 @@ function Research() {
                 <br></br>3. You must click Import Skeleton, which generates a massive, text-based tree view of every single bone in Doozy's body.
                 <br></br>4. You have to manually scroll through that list and uncheck the checkbox next to every single finger bone (mixamorig1:LeftHandFinger1, mixamorig1:LeftHandFinger2, etc.) one by one.
 
+                <br></br><br></br>How to create an Avatar Mask for it?
+                <br></br>1. Create an Avatar Mask by right clicking on the Assets folder, and double click on the mask after creating it. 
+                <br></br>2. Click on humanoid and deselect the rest of the body. Just leave the hands on(green). Click on Transform and select DoozyAvatar, and import the skeleton.
+                <br></br>3. Deselct everything, and go down to the skeleton and select ONLY the eight fingers.
+                <br></br>
+                <br></br>Record the animation <br></br>1. Right click on the project and create a new animation clip and drag it to the avatar(this case Doozy).
+                <br></br>
+
             </div>
           </div>
         );
