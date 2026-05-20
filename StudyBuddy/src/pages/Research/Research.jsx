@@ -73,6 +73,14 @@ function Research() {
                 When the data was exported, the finger joints were left entirely blank, so Unity defaults them to their straight, unmoving T-pose state.
                 However, we can fix it within Unity by using an Avatar Mask to layer a natural hand pose over the recording.
 
+                <br></br><br></br><h4>How does Avatar Mask work on humanoid and generic Rig?</h4>
+                In a Humanoid setup, the mask works on abstract body parts using that simple green and red stick-figure diagram.Unity automatically translates "Left Hand" to whatever bone is assigned to the left hand, regardless of its name. If you check the hand icons on the diagram, Unity instantly masks out the fingers across the board because it natively understands human anatomy.
+                <br></br><br></br>On a Generic rig, Unity has absolutely no idea what a "hand," "leg," or "head" is. To the engine, a Generic rig is just a collection of random floating transform nodes. Because of this, the green stick-figure diagram is completely useless and won't do anything.
+                <br></br>To make an Avatar Mask work on a Generic rig, you have to use Transform Masking:
+                <br></br>1. You must change the mask import settings from Humanoid to Transform.
+                <br></br>2. You have to assign Doozy's specific root skeleton file to the mask.
+                <br></br>3. You must click Import Skeleton, which generates a massive, text-based tree view of every single bone in Doozy's body.
+                <br></br>4. You have to manually scroll through that list and uncheck the checkbox next to every single finger bone (mixamorig1:LeftHandFinger1, mixamorig1:LeftHandFinger2, etc.) one by one.
 
             </div>
           </div>
