@@ -88,7 +88,9 @@ function Research() {
                 <br></br>3. Deselct everything, and go down to the skeleton and select ONLY the eight fingers.
                 <br></br>
                 <br></br>Record the animation <br></br>1. Right click on the project and create a new animation clip and drag it to the avatar(this case Doozy).
-                <br></br>
+                <br></br>2. Click on Doozy, then open Window/Anmation/Animation.
+                <br></br>3. Make sure you are selecting what yo want to modify, and click on record. Stop at where you want to modify and twist the fingers/hands.wrist positions.
+                <br></br>4. Stop recording.
 
             </div>
           </div>
