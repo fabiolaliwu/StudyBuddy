@@ -92,6 +92,8 @@ function Research() {
                 <br></br>3. Make sure you are selecting what yo want to modify, and click on record. Stop at where you want to modify and twist the fingers/hands.wrist positions.
                 <br></br>4. Stop recording.
 
+                I will be updating
+
             </div>
           </div>
         );
