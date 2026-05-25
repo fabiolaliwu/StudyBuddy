@@ -20,19 +20,28 @@ const subjects = [
     active: null,  
   },
   {
-    id: '335',
-    label: 'Software Design and Analysis III',
-    code: 'CSCI 335',
-    desc: 'darren, replace description :)',
-    link: '/335', 
-    active: true,  
-  },
-  {
     id: '160',
     label: 'Computer Architecture I',
     code: 'CSCI 160',
     desc: 'Covers binary number representations, Boolean algebras, logic gates, combinational logic, flip-flops, and sequential circuits.',
     link: '/160', 
+    active: true,  
+  },
+  
+  {
+    id: '265',
+    label: 'Computer Theory',
+    code: 'CSCI 160',
+    desc: 'islam, change the description :)',
+    link: '/265', 
+    active: true,  
+  },
+  {
+    id: '335',
+    label: 'Software Design and Analysis III',
+    code: 'CSCI 335',
+    desc: 'darren, replace description :)',
+    link: '/335', 
     active: true,  
   },
   {
