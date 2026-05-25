@@ -11,7 +11,7 @@ function CT() {
       case 'notes':
         return (
           <div className="tab-pane notes-container">
-            <p className="section-title">These are the notes for Computer Architecture I taken in Spring 2024 with Professor Maryash</p>
+            <p className="section-title">Computer Theory based off the teachings of Eric "The Wizard" Schweitzer</p>
             <img 
                 src="/decimal.png" 
                 alt="conversion" 
