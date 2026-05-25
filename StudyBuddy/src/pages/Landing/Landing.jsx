@@ -4,14 +4,6 @@ import './Landing.css';
 
 const subjects = [
   {
-    id: 'os',
-    label: 'Operating Systems',
-    code: 'CSCI 340',
-    desc: 'Explores the design of modern operating systems, including process management, scheduling, memory management, and file systems.',
-    link: '/os',
-    active: true,
-  },
-  {
     id: '135',
     label: 'Software Design and Analysis I',
     code: 'CSCI 135',
@@ -43,6 +35,14 @@ const subjects = [
     desc: 'darren, replace description :)',
     link: '/335', 
     active: true,  
+  },
+  {
+    id: 'os',
+    label: 'Operating Systems',
+    code: 'CSCI 340',
+    desc: 'Explores the design of modern operating systems, including process management, scheduling, memory management, and file systems.',
+    link: '/os',
+    active: true,
   },
   {
     id: 'db',
