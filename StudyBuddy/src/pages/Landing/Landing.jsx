@@ -31,7 +31,7 @@ const subjects = [
   {
     id: '265',
     label: 'Computer Theory',
-    code: 'CSCI 160',
+    code: 'CSCI 265',
     desc: 'islam, change the description :)',
     link: '/265', 
     active: true,  
