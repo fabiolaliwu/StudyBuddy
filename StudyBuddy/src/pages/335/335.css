@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.plain-landing {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fafaf9;
+  position: relative;
+  font-family: 'Instrument Sans', sans-serif;
+  padding: 80px 52px;
+}
+
+.plain-landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* --- ✅ FIXED HEADER (Tabs and Logo on one line) --- */
+.os-header {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: row;      /* Desktop: Side by side */
+  justify-content: space-between; 
+  align-items: flex-end;    /* Baseline alignment */
+  margin-bottom: 60px;
+  z-index: 10;
+  position: relative;
+}
+
+/* IMPORTANT: This overrides the absolute positioning from your Landing.css */
+.os-header .landing-logo {
+  position: static !important; 
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.back-link {
+  text-decoration: none;
+  font-size: 12px;
+  color: #c0c0c0;
+  margin-bottom: 4px;
+}
+
+/* --- Tabs --- */
+.os-tabs-segmented {
+  display: flex;
+  background: #f0f0ee;
+  padding: 4px;
+  border-radius: 8px;
+  gap: 2px;
+  margin-bottom: 8px; /* Alignment tweak */
+}
+
+.tab-segment {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-segment.active {
+  background: #e2e2df;
+  color: #111;
+}
+
+/* --- ✅ DYNAMIC GRID (3 columns on PC, 1 on Mobile) --- */
+.tab-pane {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.definitions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 16px;
+  width: 100%;
+}
+
+/* --- Divider --- */
+.course-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 0 30px 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.divider-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #bbb;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #ebebeb;
+}
+
+.subject-box {
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  padding: 24px;
+  height: 100%;
+}
+
+.box-label {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.box-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #777;
+  white-space: pre-wrap;
+}
+
+/* Container for the notes tab */
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Increased gap for better visual separation */
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Individual Image styling - Making them bigger */
+.notes-image {
+  width: 100%;
+  /* CHANGED: Increased max-width from 600px to 900px or 100% 
+     to let them fill the screen more on desktop */
+  max-width: 900px; 
+  height: auto;
+  border-radius: 12px; /* Slightly rounder corners for a modern look */
+  border: 1px solid #ebebeb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Softer, larger shadow */
+  background: #fff;
+  transition: transform 0.3s ease; /* Subtle hover effect */
+}
+
+.notes-image:hover {
+  transform: scale(1.01); /* Very slight zoom on hover */
+}
+
+/* Mobile specific adjustment */
+@media (max-width: 600px) {
+  .notes-container {
+    padding: 20px 10px;
+    gap: 24px;
+  }
+  
+  .notes-image {
+    max-width: 100%; /* Ensures it fills the iPhone SE screen width */
+    border-radius: 8px;
+  }
+}
+/* --- Mobile Responsive --- */
+@media (max-width: 950px) {
+  .os-header {
+    flex-direction: column; /* Stack header items on small screens */
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .definitions-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .os-tabs-segmented {
+    width: 100%;
+  }
+
+  .tab-segment {
+    flex: 1;
+    text-align: center;
+  }
+}

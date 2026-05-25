@@ -20,6 +20,14 @@ const subjects = [
     active: null,  
   },
   {
+    id: '335',
+    label: 'Software Design and Analysis III',
+    code: 'CSCI 335',
+    desc: 'darren, replace description :)',
+    link: '/335', 
+    active: true,  
+  },
+  {
     id: '160',
     label: 'Computer Architecture I',
     code: 'CSCI 160',
@@ -32,15 +40,15 @@ const subjects = [
     label: 'Database Management',
     code: 'CSCI 435',
     desc: 'Study of hierarchical, network, and relational databases, including normalization theory and various query languages.',
-    link: '/db',   // ✅ Link updated
-    active: null,  // ✅ Set to true
+    link: '/db', 
+    active: null,  
   },
   {
     id: 'vr',
     label: 'Research notes',
     code: 'VR',
     desc: 'Personal notes for my research in the VR Lab at Hunter College',
-    link: '/vr',   // ✅ Link updated
+    link: '/vr',  
     active: true, 
   },
 ];

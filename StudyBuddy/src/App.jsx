@@ -6,18 +6,20 @@ import SND from './pages/135/135';
 import DB from './pages/DatabaseDesign/DatabaseDesign';
 import VR from './pages/Research/Research';
 import Portfolio from './pages/Portfolio/Portfolio';
+import SND3 from './pages/335/335';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Portfolio />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/os" element={<OS />} />
         <Route path="/160" element={<Arc />} />
         <Route path="/135" element={<SND />} />
         <Route path="/db" element={<DB />} />
         <Route path="/vr" element={<VR />} />
+        <Route path="/335" element={<SND3 />} />
       </Routes>
     </BrowserRouter>
   );
