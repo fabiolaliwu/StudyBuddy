@@ -32,7 +32,7 @@ const subjects = [
     id: '335',
     label: 'Software Design and Analysis III',
     code: 'CSCI 335',
-    desc: 'darren, replace description :)',
+    desc: 'Algorithm Analysis, Advanced Trees, Special Priority Queues (Heaps), Sorting Algorithms, Disjoint Sets, Graph Algorithms, Dynamic Programming, Randomized Algorithms, and Amortized Analysis.',
     link: '/335', 
     active: true,  
   },
