@@ -11,39 +11,14 @@ function CT() {
       case 'notes':
         return (
           <div className="tab-pane notes-container">
-            <p className="section-title">Computer Theory based off the teachings of Eric "The Wizard" Schweitzer</p>
-            <img 
-                src="/decimal.png" 
-                alt="conversion" 
-                className="notes-image" 
-            />
-             <img 
-                src="/hexadecimal.png" 
-                alt="conversion" 
-                className="notes-image" 
-            />
-            <img 
-                src="/binary_add&sub.png" 
-                alt="conversion" 
-                className="notes-image" 
-            />
-            <img 
-                src="/hex_add&sub.png" 
-                alt="conversion" 
-                className="notes-image" 
-            />
-            <img 
-                src="/binary_mult.png" 
-                alt="conversion" 
-                className="notes-image" 
-            />
-
+            <p className="section-title">The notes will be based off Eric Schweitzers teahcings and the textbook:</p>
             </div>
         );
+
       case 'exercises':
         return (
             <div className="tab-pane notes-container">
-                soon
+                Practice Problems
             </div>
     
         );
@@ -52,29 +27,27 @@ function CT() {
   };
 
   return (
-    <div className="plain-landing">
-      <header className="os-header">
-        <div className="landing-logo">
-          <Link to="/" className="back-link">← Back to Courses</Link>
-          <h1 className="main-title">Computer Theory</h1>
-        </div>
-
-        <div className="os-tabs-segmented">
-          {['notes', 'exercises'].map((tab) => (
-            <div 
-              key={tab}
-              className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab)}
-            >
-            </div>
-          ))}
-        </div>
-      </header>
-
+      <div className="plain-landing">
+        <header className="os-header">
+          <div className="landing-logo">
+            <Link to="/" className="back-link">← Back to Courses</Link>
+            <h1 className="main-title">335</h1>
+          </div>
+          <div className="os-tabs-segmented">
+            {['notes', 'practice'].map((tab) => (
+              <div
+                key={tab}
+                className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </div>
+            ))}
+          </div>
+        </header>
         {renderContent()}
-    
-    </div>
-  );
+      </div>
+    );
 }
 
 export default CT;
