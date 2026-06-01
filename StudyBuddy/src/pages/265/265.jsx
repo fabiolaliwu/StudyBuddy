@@ -11,7 +11,7 @@ function CT() {
       case 'notes':
         return (
           <div className="tab-pane notes-container">
-            <p className="section-title">The notes will be based off Eric Schweitzers teahcings and the textbook:</p>
+            <p className="section-title">The following notes will be based off Eric Schweitzers guidance</p>
             </div>
         );
 
