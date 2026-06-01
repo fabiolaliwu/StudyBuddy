@@ -24,7 +24,7 @@ const subjects = [
     id: '265',
     label: 'Computer Theory',
     code: 'CSCI 265',
-    desc: 'islam, change the description :)',
+    desc: 'The Theory of Computation is the mathematical foundation of computer science that studies how problems can be solved using computational models, their limitations, and efficiency. It defines what computers can do, what they cannot do, and how efficiently they can do it.',
     link: '/265', 
     active: true,  
   },
