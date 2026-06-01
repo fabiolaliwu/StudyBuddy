@@ -31,7 +31,7 @@ function CT() {
         <header className="os-header">
           <div className="landing-logo">
             <Link to="/" className="back-link">← Back to Courses</Link>
-            <h1 className="main-title">335</h1>
+            <h1 className="main-title">265</h1>
           </div>
           <div className="os-tabs-segmented">
             {['notes', 'practice'].map((tab) => (
