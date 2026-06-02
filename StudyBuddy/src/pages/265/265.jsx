@@ -30,7 +30,7 @@ function CT() {
                   <h4>Whats the point?</h4>
                 <br></br>
                   <ul>
-                    <li>Without theory, what do we really have? Theory gives us the opportunity to explore whats actually possible. It allows to find that difference between whats <strong>engineering</strong> and whats <strong>guessing</strong>
+                    <li>Without theory, what do we really have? Theory gives us the opportunity to explore whats actually possible. It allows us to find that difference between whats <strong>engineering</strong> and whats <strong>guessing</strong>.
                     </li>
                   </ul>
 
@@ -54,6 +54,10 @@ function CT() {
                 Alphabet: any finite non-empty set of 'symbols' <br></br>
                 - Typically symbolized as 'Σ'
 
+                {/* Under construciton image */}
+                <div className="tab-pane notes-container"><img src="/under_construction.png" alt="construction"className="notes-image"/> </div>
+                
+              
             {/* 
                 <h4>Applying IK to the Unity avatar</h4>
                 - Download Animation Rigging.

@@ -216,3 +216,17 @@
     text-align: center;
   }
 }
+
+.notes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.notes-image {
+  width: 500px;      /* adjust size as needed */
+  max-width: 80%;
+  height: auto;
+}
