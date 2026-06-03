@@ -550,7 +550,7 @@ const cpu_defs = [
   },
   {
     q: "What is CPU burst? What is I/O burst?",
-    a: "CPU burst: period of time when a process wants to use CPU only. think about your program running, and it needs to do I/O operation.\nI/O burst: period of time when a process wants to use an I/O device. what happens after it? goes back to the ready queue."
+    a: "CPU burst: period of time when a process wants to use only the CPU, the period before it needs to do an I/O operation.\nI/O burst: period of time when a process wants to use an I/O device. what happens after it? goes back to the ready queue."
   },
   {
     q: "Why can it be beneficial to schedule short CPU burst processes to the CPU before long CPU burst processes?",
