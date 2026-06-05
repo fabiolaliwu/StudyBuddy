@@ -17,46 +17,7 @@ function OS() {
       case 'notes':
         return (
             <div className="tab-pane notes-container">
-                <img 
-                src="/memory.png" 
-                alt="memory" 
-                className="notes-image" 
-            />
-            <img 
-                src="/process_states.png" 
-                alt="Process States" 
-                className="notes-image" 
-            />
-            <img 
-                src="/fork.png" 
-                alt="Fork Problem" 
-                className="notes-image" 
-            />
-            <img 
-                src="/fork2.png" 
-                alt="Fork Problem" 
-                className="notes-image" 
-            />
-            <img 
-                src="/fork3.png" 
-                alt="Fork Problem" 
-                className="notes-image" 
-            />
-            <img 
-                src="/addresses.png" 
-                alt="Addresses" 
-                className="notes-image" 
-            />
-            <img 
-                src="/page_table.png" 
-                alt="Page Table" 
-                className="notes-image" 
-            />
-            <img 
-                src="/page_question.png" 
-                alt="Page Question" 
-                className="notes-image" 
-            />
+                funny
             </div>
     
         );
