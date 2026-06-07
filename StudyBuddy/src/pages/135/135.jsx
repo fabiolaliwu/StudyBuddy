@@ -25,7 +25,7 @@ function OS() {
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
-                <p className="ai-placeholder-text">AI Helper coming soon!</p>
+                <p className="ai-placeholder-text">AI Helper never coming!</p>
             </div>
           </div>
         );
