@@ -134,7 +134,7 @@ function SND3() {
     <div className="plain-landing">
       <header className="os-header">
         <div className="landing-logo">
-          <Link to="/" className="back-link">← Back to Courses</Link>
+          <Link to="/landing" className="back-link">← Back to Courses</Link>
           <h1 className="main-title">335</h1>
         </div>
         <div className="os-tabs-segmented">
