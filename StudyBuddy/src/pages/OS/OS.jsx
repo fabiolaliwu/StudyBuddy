@@ -295,7 +295,7 @@ const ipc_defs = [
   },
   {
     q: "What is DNS?",
-    a: "separate computer that takes input URL and provides IP Address of the destination computer for the "
+    a: "a separate computer that takes input URL and provides IP Address of the destination computer for the "
   },
   {
     q: "What is RPC?",
