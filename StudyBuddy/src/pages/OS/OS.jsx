@@ -203,7 +203,7 @@ function OS() {
   },
   {
     q: "exec(fileName)",
-    a: "erase the original process content and fill the process with the new instructions and data from fileName"
+    a: "erases the original process content and fill the process with the new instructions and data from fileName"
   },
   {
     q: "exit()",
