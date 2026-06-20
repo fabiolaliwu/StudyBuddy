@@ -179,7 +179,7 @@ function OS() {
   },
   {
     q: "Where does the process go once the I/O request is complete?",
-    a: "The process returns to the ready queue again until it is completely executed."
+    a: "The process returns to the ready queue again until is completely executed."
   },
   {
     q: "Understand what happens to processes in reality when process states change (don’t be fooled by process “movements” in typical visualizations).",
