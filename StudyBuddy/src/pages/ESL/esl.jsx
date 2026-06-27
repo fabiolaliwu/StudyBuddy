@@ -61,7 +61,28 @@ function Esl() {
     { q: "Go over", a: "To review, check, or examine something in detail." },
     { q: "Come up with", a: "To produce or invent an idea or solution." },
     { q: "Run into", a: "To experience an unexpected problem." },
-    { q: "Turn out", a: "To describe the final result or outcome of a situation." }
+    { q: "Turn out", a: "To describe the final result or outcome of a situation." },
+    { q: "Bring up", a: "To mention a topic or introduce a subject for discussion." },
+    { q: "Catch up", a: "To reach the same level or point as someone or something else." },
+    { q: "Cut off", a: "To interrupt or stop something from continuing." },
+    { q: "Drop out", a: "To quit or withdraw from a course, program, or school." },
+    { q: "Fill in", a: "To provide missing information or complete a form." },
+    { q: "Get across", a: "To successfully communicate an idea or message to others." },
+    { q: "Keep up", a: "To maintain the same pace or level as others." },
+    { q: "Pass out", a: "To distribute something to a group of people." },
+    { q: "Take over", a: "To assume control or responsibility for a task or system." },
+    { q: "Work out", a: "To solve a problem or calculate a result." },
+    { q: "Break down", a: "To analyze something in detail or explain it into smaller parts." },
+    { q: "Call for", a: "To publicly ask for or demand something." },
+    { q: "Check out", a: "To examine or investigate something to see if it is interesting or correct." },
+    { q: "Draw up", a: "To prepare a formal document, such as a contract or plan." },
+    { q: "Figure out", a: "To understand a difficult situation or find an answer by thinking." },
+    { q: "Hold off", a: "To delay or wait before doing something." },
+    { q: "Look over", a: "To read or examine something quickly to check for errors." },
+    { q: "Put together", a: "To create or organize something by combining different parts." },
+    { q: "Sign up", a: "To register or enroll for a course, service, or event." },
+    { q: "Take on", a: "To accept a new task, responsibility, or project." }
+    
   ];
 
   const toggleSection = (title) => {
