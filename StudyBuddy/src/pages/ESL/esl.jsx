@@ -81,8 +81,18 @@ function Esl() {
     { q: "Look over", a: "To read or examine something quickly to check for errors." },
     { q: "Put together", a: "To create or organize something by combining different parts." },
     { q: "Sign up", a: "To register or enroll for a course, service, or event." },
-    { q: "Take on", a: "To accept a new task, responsibility, or project." }
-    
+    { q: "Take on", a: "To accept a new task, responsibility, or project." },
+    { q: "Back out", a: "To decide not to do something that you had previously agreed to do." },
+    { q: "Catch on", a: "To understand something or become popular." },
+    { q: "Count on", a: "To rely or depend on someone or something." },
+    { q: "Fall behind", a: "To fail to keep up with a schedule or progress." },
+    { q: "Give in", a: "To stop competing or arguing and accept defeat." },
+    { q: "Look ahead", a: "To think about what will happen in the future." },
+    { q: "Narrow down", a: "To reduce the number of options to a smaller, more manageable list." },
+    { q: "Run out", a: "To use up a supply of something until there is none left." },
+    { q: "Sort out", a: "To organize, resolve, or fix a confusing situation or problem." },
+    { q: "Try out", a: "To test something to see how it works or if you like it." }
+
   ];
 
   const toggleSection = (title) => {
