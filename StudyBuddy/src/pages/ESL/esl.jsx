@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './esl.css';
 
-// Reusable component for collapsible sections
-const CollapsibleSection = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+// Reusable component for collapsible sections (Controlled)
+const CollapsibleSection = ({ title, children, isOpen, onClick }) => {
   return (
     <div style={{ marginBottom: '15px', borderBottom: '1px solid #eee' }}>
       <h3 
-        onClick={() => setIsOpen(!isOpen)} 
+        onClick={onClick} 
         style={{ cursor: 'pointer', userSelect: 'none', color: '#333' }}
       >
         {isOpen ? '▼ ' : '▶ '} {title}
@@ -20,15 +18,26 @@ const CollapsibleSection = ({ title, children }) => {
 };
 
 function Esl() {
-  const [activeTab, setActiveTab] = useState('notes');
+  const [activeTab, setActiveTab] = useState('Notes');
+  // Track only one open section at a time
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (title) => {
+    setOpenSection(openSection === title ? null : title);
+  };
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Notes':
+      case 'Grammar':
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
-              <CollapsibleSection title="PRESENT TENSES">
+              
+              <CollapsibleSection 
+                title="PRESENT TENSES" 
+                isOpen={openSection === 'PRESENT TENSES'} 
+                onClick={() => toggleSection('PRESENT TENSES')}
+              >
                 <h4>Simple Present</h4>
                 Used for habits, routines, general facts, or schedules. <br />
                 Example: She walks to work every morning. <br /><br />
@@ -43,7 +52,11 @@ function Esl() {
                 Example: He has been waiting for the bus for 30 minutes.<br /><br />
               </CollapsibleSection>
 
-              <CollapsibleSection title="PAST TENSES">
+              <CollapsibleSection 
+                title="PAST TENSES" 
+                isOpen={openSection === 'PAST TENSES'} 
+                onClick={() => toggleSection('PAST TENSES')}
+              >
                 <h4>Simple Past</h4>
                 Used for actions that were completed at a specific time in the past.<br />
                 Example: We visited the museum yesterday.<br /><br />
@@ -58,7 +71,11 @@ function Esl() {
                 Example: They had been working for five hours before they finally took a break.<br /><br />
               </CollapsibleSection>
 
-              <CollapsibleSection title="FUTURE TENSES">
+              <CollapsibleSection 
+                title="FUTURE TENSES" 
+                isOpen={openSection === 'FUTURE TENSES'} 
+                onClick={() => toggleSection('FUTURE TENSES')}
+              >
                 <h4>Simple Future</h4>
                 Used for promises, predictions, or decisions made at the moment of speaking.<br />
                 Example: I will call you tomorrow morning.<br /><br />
@@ -73,7 +90,11 @@ function Esl() {
                 Example: By next month, I will have been living in this city for three years.<br /><br />
               </CollapsibleSection>
 
-              <CollapsibleSection title="CONDITIONAL">
+              <CollapsibleSection 
+                title="CONDITIONALS" 
+                isOpen={openSection === 'CONDITIONAL'} 
+                onClick={() => toggleSection('CONDITIONAL')}
+              >
                 <h4>The Zero Conditional (General Truths)</h4>
                 Use: To talk about facts or scientific truths.<br />
                 Example: If you heat water to 100 degrees Celsius, it boils.<br /><br />
@@ -90,10 +111,19 @@ function Esl() {
                 Use: To show how an unreal condition in the past affects the present.<br />
                 Example: If I had taken that job in Tokyo, I would live in Japan right now.<br /><br />
               </CollapsibleSection>
+
             </div>
           </div>
         );
-      case 'exercises':
+      case 'Grammar':
+        return (
+            <div className="tab-pane">
+                <div className="ai-chat-placeholder">
+                    
+                </div>
+            </div>
+        );
+      case 'Exercises':
         return <div className="tab-pane notes-container">soon</div>;
       default:
         return null;
@@ -108,7 +138,7 @@ function Esl() {
           <h1 className="main-title">ESL</h1>
         </div>
         <div className="os-tabs-segmented">
-          {['Notes', 'Exercises'].map((tab) => (
+          {['Grammar','Phrasal Verbs', 'Exercises'].map((tab) => (
             <div
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
