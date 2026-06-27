@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './esl.css';
 
@@ -17,10 +17,52 @@ const CollapsibleSection = ({ title, children, isOpen, onClick }) => {
   );
 };
 
+function Flashcard({ q, a }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cardRef.current && !cardRef.current.contains(event.target)) {
+        setIsFlipped(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="flashcard-container" ref={cardRef} onClick={() => setIsFlipped(!isFlipped)}>
+      <div className={`flashcard-inner ${isFlipped ? 'is-flipped' : ''}`}>
+        <div className="flashcard-front subject-box active-stat">
+          <span className="box-label">{q}</span>
+        </div>
+        <div className="flashcard-back subject-box active-stat">
+          <p className="box-desc">{a}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Esl() {
-  const [activeTab, setActiveTab] = useState('Notes');
-  // Track only one open section at a time
+  const [activeTab, setActiveTab] = useState('Grammar');
   const [openSection, setOpenSection] = useState(null);
+
+  const phrasalVerbsData = [
+    { q: "Carry out", a: "To perform, conduct, or complete a task or research." },
+    { q: "Look into", a: "To investigate or examine a topic thoroughly." },
+    { q: "Find out", a: "To discover information or learn something new." },
+    { q: "Point out", a: "To draw attention to a specific fact, error, or detail." },
+    { q: "Set up", a: "To prepare, install, or arrange equipment or software." },
+    { q: "Back up", a: "To create a copy of data or files." },
+    { q: "Go over", a: "To review, check, or examine something in detail." },
+    { q: "Come up with", a: "To produce or invent an idea or solution." },
+    { q: "Run into", a: "To experience an unexpected problem." },
+    { q: "Turn out", a: "To describe the final result or outcome of a situation." }
+  ];
 
   const toggleSection = (title) => {
     setOpenSection(openSection === title ? null : title);
@@ -28,7 +70,7 @@ function Esl() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Grammar':
+            case 'Grammar':
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
@@ -115,18 +157,19 @@ function Esl() {
             </div>
           </div>
         );
-      case 'Grammar':
+      case 'Phrasal Verbs':
         return (
-            <div className="tab-pane">
-                <div className="ai-chat-placeholder">
-                    
-                </div>
+          <div className="tab-pane">
+            <div className="ai-chat-placeholder definitions-grid">
+              {phrasalVerbsData.map((item, index) => (
+                <Flashcard key={index} q={item.q} a={item.a} />
+              ))}
             </div>
+          </div>
         );
       case 'Exercises':
         return <div className="tab-pane notes-container">soon</div>;
-      default:
-        return null;
+      default: return null;
     }
   };
 
@@ -138,7 +181,7 @@ function Esl() {
           <h1 className="main-title">ESL</h1>
         </div>
         <div className="os-tabs-segmented">
-          {['Grammar','Phrasal Verbs', 'Exercises'].map((tab) => (
+          {['Grammar', 'Phrasal Verbs', 'Exercises'].map((tab) => (
             <div
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
