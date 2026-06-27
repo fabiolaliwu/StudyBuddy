@@ -8,6 +8,7 @@ import VR from './pages/Research/Research';
 import Portfolio from './pages/Portfolio/Portfolio';
 import SND3 from './pages/335/335';
 import CT from './pages/265/265';
+import ESL from './pages/ESL/esl';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/135" element={<SND />} />
         <Route path="/db" element={<DB />} />
         <Route path="/vr" element={<VR />} />
+        <Route path="/esl" element={<ESL />} />
         <Route path="/335" element={<SND3 />} />
         <Route path="/265" element={<CT />} />
       </Routes>

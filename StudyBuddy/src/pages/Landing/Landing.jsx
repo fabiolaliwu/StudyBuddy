@@ -60,6 +60,14 @@ const subjects = [
     link: '/vr',  
     active: true, 
   },
+  {
+    id: 'esl',
+    label: 'ESL',
+    code: 'esl',
+    desc: 'English as second language for a Spanish-speaking learner',
+    link: '/esl',  
+    active: true, 
+  },
 ];
 
 function Landing() {
