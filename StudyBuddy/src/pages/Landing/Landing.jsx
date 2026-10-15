@@ -19,7 +19,14 @@ const subjects = [
     link: '/160', 
     active: true,  
   },
-  
+  {
+    id: '260',
+    label: 'Computer Architecture 2',
+    code: 'CSCI 260',
+    desc: 'Hardware/software interface, MIPS ISA, instruction set architecture, pipelining, memory hierarchies, caches, and virtual memory.',
+    link: '/260',
+    active: true,
+  },
   {
     id: '265',
     label: 'Computer Theory',
@@ -53,6 +60,14 @@ const subjects = [
     active: null,  
   },
   {
+    id: '730',
+    label: 'Computer Systems',
+    code: 'CSCI 73000',
+    desc: 'Terminology, functional units, buses, DMA, interrupts, priorities, memory systems, I/O systems, parallel processing, and networking.',
+    link: '/730',  
+    active: true, 
+  },
+  {
     id: 'vr',
     label: 'Research notes',
     code: 'VR',
@@ -66,7 +81,7 @@ const subjects = [
     code: 'esl',
     desc: 'English as second language for a Spanish-speaking learner',
     link: '/esl',  
-    active: true, 
+    active: null, 
   },
 ];
 

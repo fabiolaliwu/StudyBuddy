@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Landing from './pages/Landing/Landing'; 
 import OS from './pages/OS/OS'; 
 import Arc from './pages/160/160';
+import Arc2 from './pages/260/260';
 import SND from './pages/135/135';
 import DB from './pages/DatabaseDesign/DatabaseDesign';
 import VR from './pages/Research/Research';
@@ -9,6 +10,7 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import SND3 from './pages/335/335';
 import CT from './pages/265/265';
 import ESL from './pages/ESL/esl';
+import CS730 from './pages/730/730';
 
 function App() {
   return (
@@ -18,12 +20,16 @@ function App() {
         <Route path="/landing" element={<Landing />} />
         <Route path="/os" element={<OS />} />
         <Route path="/160" element={<Arc />} />
+        <Route path="/260" element={<Arc2 />} />
         <Route path="/135" element={<SND />} />
         <Route path="/db" element={<DB />} />
         <Route path="/vr" element={<VR />} />
         <Route path="/esl" element={<ESL />} />
         <Route path="/335" element={<SND3 />} />
         <Route path="/265" element={<CT />} />
+        <Route path="/730" element={<CS730 />} />
+        <Route path="/73000" element={<CS730 />} />
+        <Route path="/systems" element={<CS730 />} />
       </Routes>
     </BrowserRouter>
   );
