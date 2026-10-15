@@ -131,6 +131,13 @@
   margin: 18px 0 8px 0;
 }
 
+.ai-chat-placeholder h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin: 14px 0 6px 0;
+}
+
 .ai-chat-placeholder ul {
   padding-left: 24px;
   margin: 8px 0 16px 0;
@@ -143,6 +150,45 @@
 .ai-chat-placeholder a {
   color: #111;
   text-decoration: underline;
+}
+
+.ai-chat-placeholder table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.ai-chat-placeholder th,
+.ai-chat-placeholder td {
+  border: 1px solid #e2e2df;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.ai-chat-placeholder th {
+  background: #f4f4f2;
+  font-weight: 600;
+}
+
+.ai-chat-placeholder code {
+  background: #f0f0ee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13.5px;
+}
+
+.formula-box {
+  background: #f7f7f5;
+  border-left: 3px solid #111;
+  padding: 12px 18px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .notes-container {
