@@ -11,8 +11,45 @@ function CS730() {
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
-                <h3>Memory Technology</h3>
-                hdhdhd
+                <h2>Memory Technology</h2>
+
+                <h5>Random Access Memory (RAM)</h5>
+                Uniformity becaise every location cost the same to reach.<br></br>
+                There are two types of RAM:<br></br>
+                1. DRAM: the content is periodically refreshed.
+                <br></br>
+                Dense, inexpensive, power efficient and slow.
+                <br></br> 50 ns – 70 ns, $20 – $75 per GB
+                <br></br>
+                2. SRAM: the data stored persists forever or until the power drops.
+                <br></br>Sparse, costly, power-hungry and quick.
+                <br></br> 0.5 ns – 2.5 ns, $2000 – $5000 per GB
+                <br></br><br></br>
+                
+                <h5>Not-so-random access technology: it depends on where it lands and when it is issued.</h5>
+                Examples: disk, CDROM
+                <br></br><br></br>
+                
+                <h5>Sequential access technology: latency grows linearly with position.</h5>
+                Exmaple: tape
+
+                <br></br><br></br>
+                <h5>Magenetic disk</h5>
+                5 ms – 20 ms, $0.20 – $2 per GB
+                <br></br><br></br>
+
+                <h4>Main Memory Background</h4>
+                <h5>Main memory is built from DRAM</h5>
+                - refresh is required every ~8ms
+                <br></br>- they arreive in two halves because its a teo-dimensional matrix
+                - RAS, the Row Access Strobe 
+                - CAS, the Column Access Strobe 
+                
+
+                
+
+
+
               
             </div>
           </div>
