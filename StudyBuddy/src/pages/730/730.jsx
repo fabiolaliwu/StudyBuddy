@@ -11,29 +11,8 @@ function CS730() {
         return (
           <div className="tab-pane">
             <div className="ai-chat-placeholder">
-              {/* COURSE OVERVIEW */}
-              <h2>CSCI 36000 / 73000 — Computer Systems</h2>
-              <h4>Course & Instructor Information</h4>
-              <ul>
-                <li><strong>Instructor:</strong> Sourya Saha</li>
-                <li><strong>Email:</strong> sourya.saha24@login.cuny.edu</li>
-                <li><strong>Class Hours:</strong> Wednesdays, 5:30 PM – 8:15 PM, HN 1001D</li>
-                <li><strong>Office Hours:</strong> Reserving a slot in advance is recommended</li>
-                <li><strong>Resources:</strong> Brightspace</li>
-                <li><strong>Source Text:</strong> <em>Computer Organization and Design: The Hardware Software Interface (RISC-V Edition, 2nd Edition)</em> by David A. Patterson & John L. Hennessy (Chapter 5)</li>
-              </ul>
-
-              <h4>Course Grading & Structure</h4>
-              <ul>
-                <li><strong>Lectures:</strong> Combines slide presentations with Brightspace discussions. Regular attendance is critical.</li>
-                <li><strong>Homework (20% undergrad / 15% grad):</strong> Handwritten or typed in LaTeX; due at the start of lecture.</li>
-                <li><strong>Quizzes (20% undergrad / 15% grad):</strong> 4–5 surprise in-class quizzes (10–15 MCQs each, no retakes).</li>
-                <li><strong>Tests (50%):</strong> Two exams (Exam 1: announced in class; Exam 2: during finals week).</li>
-                <li><strong>Paper Presentation (10% — graduate students only):</strong> Topics assigned during lecture.</li>
-                <li><strong>Class Participation (10%):</strong> Active involvement in lecture activities.</li>
-              </ul>
-
-              <br />
+              
+              <p className="section-title">The following notes are based on the Hunter College CSCI 73000 course by Professor Sourya Saha.</p>
               {/* TOPIC I */}
               <h2>Topic I: Memory Architecture</h2>
               <p>
