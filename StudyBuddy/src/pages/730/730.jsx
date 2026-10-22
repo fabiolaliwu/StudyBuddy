@@ -426,6 +426,21 @@ function CS730() {
             </div>
           </div>
         );
+      case 'examples':
+        return (
+          <div className="tab-pane">
+            <div className="ai-chat-placeholder">
+              <h2>Examples & Worked Problems</h2>
+
+              <h4>Cache Performance example</h4>
+              I-cache miss rate = 2%<br></br>
+              D-cache miss rate = 4% <br></br>
+              miss penalty = 100 cyclesbase CPI 
+
+
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -440,7 +455,7 @@ function CS730() {
         </div>
 
         <div className="os-tabs-segmented">
-          {['notes', 'resources'].map((tab) => (
+          {['notes', 'resources', 'examples'].map((tab) => (
             <div
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
