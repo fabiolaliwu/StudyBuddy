@@ -457,6 +457,29 @@ function CS730() {
               100ns/0.25ns/cycle = 400 cycles
               <br></br><br></br><br></br>
 
+              <h4>Multilevel Cache</h4>
+              CPU base CPI = 1<br></br>
+              clock rate = 4GHz = 0.25ns<br></br>
+              misses per instruction = 2% <br></br>
+              main memory access time = 100ns <br></br><br></br>
+
+              100ns/0.25ns = 400 cycles<br></br>
+              Effective CPI = 1+0.02x400 = 9<br></br><br></br>
+
+              
+              L-2 cache: <br></br>
+              access time = 5ns<br></br>
+              global miss rate reaching main memory = 0.5%<br></br>
+              5ns/0.25ns = 20 cycles<br></br>
+              Additional penalty= 400 cycles<br></br>
+              CPI = 1+0.02x20+0.005x400= 3.4<br></br>
+              Ratio of performance = 9/3.4<br></br><br></br><br></br>
+
+
+
+
+
+
 
 
     
