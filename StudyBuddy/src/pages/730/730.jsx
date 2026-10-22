@@ -407,7 +407,35 @@ function CS730() {
               <h4>Cache Performance example</h4>
               I-cache miss rate = 2%<br></br>
               D-cache miss rate = 4% <br></br>
-              miss penalty = 100 cyclesbase CPI 
+              miss penalty = 100 cycles <br></br>
+              base CPI with am ideal cache = 2 <br></br>
+              loads and stores accoint for 36% of instructions <br></br> <br></br>
+
+              cycles lost to misses <br></br>
+              I-cache: 0.02x100xI = 2I<br></br>
+              D-cache: 0.36x100x0.04xI = 1.44I<br></br>
+
+              Memory stall = 2I+1.44I = 3.44I<br></br>
+              CPU cycles including misses = 2I+3.44I = 5.44I<br></br><br></br>
+
+              The ideal machines'advantage, which means a "perfect cache" with 0% of miss <br></br>
+              5.44I/2I = 2.72 times<br></br><br></br><br></br>
+
+
+              <h4>Average memory access time (AMAT)</h4>
+              AMAT = hit time + miss rate x miss penalty<br></br>
+              Exmaple: <br></br>
+              A CPU clocked at 1ns, hit time of 1 cycle, miss penalty of 20 cycles, I-cache miss rate of 5%<br></br>
+              AMAT = 1 + 0.05x20 <br></br>= 2 clock cycles, i.e. 2ns<br></br><br></br><br></br>
+
+              
+
+
+
+
+
+
+
 
 
             </div>
