@@ -432,14 +432,34 @@ function CS730() {
               - CPU performance rises, miss penalty weights more: when the CPU is fast, it will finish executing the instruction before the next data is loaded from the main memory. Therefore, it creates a memory stall and it will cause cache miss because of memory stall.<br></br>
               - Lowering the base CPI leaves memory stall consume more CPU cycles: the CPU is gonna be faster and so memory stall is gonna be larger than the CPU execution time. <br></br>
               - Raising the clock rate makes memory stalls consume more CPU cycles: because it will take less time to finish executing an instruction, so it will be wasting cycles because of memory stall. <br></br>
-              
-              
-              
+
+              So suppose the base CPI falls from 2 to 1: 
+              Memory stall = 1I+1.44I = 2.44I<br></br>
+              CPU cycles including misses = 1I+3.44I = 4.44I<br></br><br></br>
+
+              The ideal machines'advantage, which means a "perfect cache" with 0% of miss <br></br>
+              4.44I/1I = 4.44 times<br></br>
+              Comparing the time of the memory stalls<br></br>
+              = 3.44/5.44 = 63%<br></br>
+              = 3.44/4.44 = 77%
+              <br></br><br></br><br></br>
+
+
+              <h4>Performance When the Clock Rate Is Raised</h4>
+              Case 1: 1GHz CPU <br></br>
+              1GHz = 1ns per cycle<br></br>
+              With a memory access time of 100ns, how many cycles must the processor wait? <br></br>
+              100ns/1ns/cycle = 100 cycles.<br></br><br></br>
+
+              Case 2: 4GHZ CPU<br></br>
+              4GHz = 0.25ns per cycle<br></br>
+              With a memory access time of 100ns, how many cycles must the processor wait?<br></br>
+              100ns/0.25ns/cycle = 400 cycles
               <br></br><br></br><br></br>
 
 
 
-
+    
 
 
 
