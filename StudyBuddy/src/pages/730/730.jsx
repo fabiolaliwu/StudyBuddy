@@ -15,9 +15,7 @@ function CS730() {
               <p className="section-title">The following notes are based on the Hunter College CSCI 73000 course by Professor Sourya Saha.</p>
               {/* TOPIC I */}
               <h2>Topic I: Memory Architecture</h2>
-              <p>
-                <strong>Goals:</strong> Recognize modern computer memory technologies and their evolution; understand that memory bus traffic is dominated by cache refills; evaluate cache organization trade-offs; understand why multiprocessors require cache coherency.
-              </p>
+             
 
               {/* 1. MEMORY TECHNOLOGY */}
               <h3>1. Memory Technology</h3>
@@ -397,33 +395,7 @@ function CS730() {
       case 'resources':
         return (
           <div className="tab-pane">
-            <div className="notes-container">
-              <div className="systems-section">
-                <h3>Recommended Textbooks & References</h3>
-                <div className="systems-resources">
-                  <div className="resource-card">
-                    <a href="https://csapp.cs.cmu.edu/" target="_blank" rel="noopener noreferrer">
-                      Computer Systems: A Programmer's Perspective (CS:APP3e) ↗
-                    </a>
-                    <p>By Randal E. Bryant and David R. O'Hallaron (Carnegie Mellon University). Comprehensive text on hardware-software interaction and system-level execution.</p>
-                  </div>
-
-                  <div className="resource-card">
-                    <a href="https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1" target="_blank" rel="noopener noreferrer">
-                      Computer Architecture: A Quantitative Approach ↗
-                    </a>
-                    <p>By John L. Hennessy and David A. Patterson. The classic graduate-level text on modern processor design, memory systems, and parallel architectures.</p>
-                  </div>
-
-                  <div className="resource-card">
-                    <a href="https://hunter-cs.org/" target="_blank" rel="noopener noreferrer">
-                      Hunter College Department of Computer Science ↗
-                    </a>
-                    <p>Graduate course catalog and bulletin for CSCI 73000 (Computer Systems).</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         );
       case 'examples':
@@ -455,7 +427,7 @@ function CS730() {
         </div>
 
         <div className="os-tabs-segmented">
-          {['notes', 'resources', 'examples'].map((tab) => (
+          {['notes', 'examples', 'resources'].map((tab) => (
             <div
               key={tab}
               className={`tab-segment ${activeTab === tab ? 'active' : ''}`}
