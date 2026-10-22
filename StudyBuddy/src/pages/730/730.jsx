@@ -426,9 +426,18 @@ function CS730() {
               AMAT = hit time + miss rate x miss penalty<br></br>
               Exmaple: <br></br>
               A CPU clocked at 1ns, hit time of 1 cycle, miss penalty of 20 cycles, I-cache miss rate of 5%<br></br>
-              AMAT = 1 + 0.05x20 <br></br>= 2 clock cycles, i.e. 2ns<br></br><br></br><br></br>
-
+              AMAT = 1 + 0.05x20 <br></br>= 2 clock cycles, i.e. 2ns<br></br>
+              <br></br>
+              Performance Summary <br></br>
+              - CPU performance rises, miss penalty weights more: when the CPU is fast, it will finish executing the instruction before the next data is loaded from the main memory. Therefore, it creates a memory stall and it will cause cache miss because of memory stall.<br></br>
+              - Lowering the base CPI leaves memory stall consume more CPU cycles: the CPU is gonna be faster and so memory stall is gonna be larger than the CPU execution time. <br></br>
+              - Raising the clock rate makes memory stalls consume more CPU cycles: because it will take less time to finish executing an instruction, so it will be wasting cycles because of memory stall. <br></br>
               
+              
+              
+              <br></br><br></br><br></br>
+
+
 
 
 
