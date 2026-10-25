@@ -475,6 +475,8 @@ function CS730() {
               CPI = 1+0.02x20+0.005x400= 3.4<br></br>
               Ratio of performance = 9/3.4<br></br><br></br><br></br>
 
+              check the slides again :
+
 
 
 
